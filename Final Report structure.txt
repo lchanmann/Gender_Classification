@@ -1,0 +1,9 @@
+1.	Title/Abstract		0.5 pages
+2.	Intro/Background	1-2
+3.	Methods				1-2
+4.	Results				2-3
+5.	Conclusions			0.5
+[]	References			unlimited
+Total: 5 Page minimum (8 page maximum?) not including references
+11 pt font, Times or Arial
+May be single or double spaced
