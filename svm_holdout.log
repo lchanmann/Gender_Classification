@@ -1,0 +1,139 @@
+SVM training ...
+	KernelFunction = linear
+	Solver = ISDA
+	BoxConstraint = 1.00
+	------------------------------
+	4685 support vectors out of 6915 training samples!
+	Weights (see: svm.Beta), Bias (see: svm.Bias)
+ 
+Elapsed time is 84.184533 seconds.
+
+confusion =
+
+        1914        1519
+         638         539
+
+Gender accuracy =
+ 
+	 0.4152 	 0.1169  
+ 
+Total accuracy =
+ 
+	 0.5321  
+
+SVM training ...
+	KernelFunction = linear
+	Solver = ISDA
+	BoxConstraint = 10000.00
+	------------------------------
+	4223 support vectors out of 6915 training samples!
+	Weights (see: svm.Beta), Bias (see: svm.Bias)
+ 
+Elapsed time is 83.289766 seconds.
+
+confusion =
+
+        1742        1691
+         485         692
+
+Gender accuracy =
+ 
+	 0.3779 	 0.1501  
+ 
+Total accuracy =
+ 
+	 0.5280  
+
+SVM training ...
+	KernelFunction = polynomial
+	PolynomialOrder = 2
+	Solver = SMO
+	BoxConstraint = 1.00
+	------------------------------
+	2355 support vectors out of 6915 training samples!
+	Weights (see: svm.Beta), Bias (see: svm.Bias)
+ 
+Elapsed time is 156.176618 seconds.
+
+confusion =
+
+        3000         433
+         379         798
+
+Gender accuracy =
+ 
+	 0.6508 	 0.1731  
+ 
+Total accuracy =
+ 
+	 0.8239  
+	 
+SVM training ...
+	KernelFunction = polynomial
+	PolynomialOrder = 2
+	Solver = ISDA
+	BoxConstraint = 1.00
+	------------------------------
+	3053 support vectors out of 6915 training samples!
+	Weights (see: svm.Beta), Bias (see: svm.Bias)
+ 
+Elapsed time is 37.062931 seconds.
+
+confusion =
+
+        2994         439
+         379         798
+
+Gender accuracy =
+ 
+	 0.6495 	 0.1731  
+ 
+Total accuracy =
+ 
+	 0.8226  
+ 
+SVM training ...
+	KernelFunction = gaussian
+	Solver = SMO
+	BoxConstraint = 1.00
+	------------------------------
+	6897 support vectors out of 6915 training samples!
+	Weights (see: svm.Beta), Bias (see: svm.Bias)
+ 
+Elapsed time is 3.867312 seconds.
+
+confusion =
+
+        3433           0
+        1176           1
+
+Gender accuracy =
+ 
+	 0.7447 	 0.0002  
+ 
+Total accuracy =
+ 
+	 0.7449  
+ 
+SVM training ...
+	KernelFunction = gaussian
+	Solver = SMO
+	BoxConstraint = 1000.00
+	------------------------------
+	6897 support vectors out of 6915 training samples!
+	Weights (see: svm.Beta), Bias (see: svm.Bias)
+ 
+Elapsed time is 4.381841 seconds.
+
+confusion =
+
+        3433           0
+        1176           1
+
+Gender accuracy =
+ 
+	 0.7447 	 0.0002  
+ 
+Total accuracy =
+ 
+	 0.7449  
