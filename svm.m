@@ -1,30 +1,30 @@
 clc;
-display('_________________________________________________________');
-display('                                                         ');
-display('                    SVM Classifier                       ');
-display('_________________________________________________________');
-display(' ');
-clear;
-close all;
-
-% load data
-load('X.mat');
-
-% data partition
-p = 0.4; % hold-out partition
-CV = cvpartition(y, 'Holdout', p);
-train_idx = training(CV);
-test_idx = test(CV);
-
-X_train = X(train_idx, :);
-y_train = y(train_idx, :);
-X_test = X(test_idx, :);
-y_test = y(test_idx, :);
+% display('_________________________________________________________');
+% display('                                                         ');
+% display('                    SVM Classifier                       ');
+% display('_________________________________________________________');
+% display(' ');
+% clear;
+% close all;
+% 
+% % load data
+% load('X.mat');
+% 
+% % data partition
+% p = 0.4; % hold-out partition
+% CV = cvpartition(y, 'Holdout', p);
+% train_idx = training(CV);
+% test_idx = test(CV);
+% 
+% X_train = X(train_idx, :);
+% y_train = y(train_idx, :);
+% X_test = X(test_idx, :);
+% y_test = y(test_idx, :);
 
 % SVM training
-kernel = 'linear';
+kernel = 'gaussian';
 % To use Quadratic Programming optimization (qp = 'L1QP')
-optimization = 'ISDA';
+optimization = 'L1QP';
 % set upper-bound on \alpha. If C=Inf then svm don't allow
 % mis-classification
 C = 1;
@@ -40,7 +40,7 @@ svm = fitcsvm(X_train, y_train ...
         , 'Solver', optimization ...
         ...% , 'KKTTolerance', 0.1 ...
         , 'BoxConstraint', C ...
-        , 'OutlierFraction', 0.01 ...
+        ...%, 'OutlierFraction', 0.01 ...
         ...% , 'Verbose', 1, 'NumPrint', 10000 ...
     );
 fprintf('\t%d support vectors out of %d training samples!\n', ...
