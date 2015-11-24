@@ -24,13 +24,13 @@ y_test = y(test_idx, :);
 
 % SVM training
 kernel = 'polynomial';
-kernel_scale = 80;
+kernel_scale = 'auto';
 % To use Quadratic Programming optimization (qp = 'L1QP')
 optimization = 'SMO';
-polynomial_order = 2;
+polynomial_order = 3;
 % set upper-bound on \alpha. If C=Inf then svm don't allow
 % mis-classification
-C = 100;
+C = 1;
 
 tic;
 display('SVM training ...');
@@ -38,7 +38,7 @@ fprintf('\tKernelFunction = %s\n', kernel);
 if (strcmpi(kernel, 'polynomial'))
     fprintf('\tPolynomialOrder = %d\n', polynomial_order);
 end
-fprintf('\tKernelScale = %d\n', kernel_scale);
+fprintf('\tKernelScale = %s\n', num2str(kernel_scale));
 fprintf('\tSolver = %s\n', optimization);
 fprintf('\tBoxConstraint = %0.2f\n', C);
 fprintf('\t------------------------------\n');
