@@ -1,0 +1,50 @@
+SVM training ...
+	KernelFunction = polynomial
+	PolynomialOrder = 2
+	KernelScale = 80
+	Solver = SMO
+	BoxConstraint = 1.00
+	------------------------------
+	3170 support vectors out of 9220 training samples!
+	Weights (see: svm.Beta), Bias (see: svm.Bias)
+ 
+Elapsed time is 7.632752 seconds.
+
+confusion =
+
+        1636          81
+         130         458
+
+Gender accuracy =
+ 
+	 0.7098 	 0.1987  
+ 
+Total accuracy =
+ 
+	 0.9085  
+ 
+SVM training ...
+	KernelFunction = polynomial
+	PolynomialOrder = 2
+	KernelScale = 80
+	Solver = SMO
+	BoxConstraint = 100.00
+	------------------------------
+	2879 support vectors out of 9220 training samples!
+	Weights (see: svm.Beta), Bias (see: svm.Bias)
+ 
+Elapsed time is 14.295080 seconds.
+
+confusion =
+
+        1599         118
+         152         436
+
+Gender accuracy =
+ 
+	 0.6937 	 0.1892  
+ 
+Total accuracy =
+ 
+	 0.8829  
+ 

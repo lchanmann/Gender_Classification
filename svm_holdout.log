@@ -137,3 +137,52 @@ Gender accuracy =
 Total accuracy =
  
 	 0.7449  
+
+SVM training ...
+	KernelFunction = gaussian
+	2 * Sigma_squared = 200
+	Solver = SMO
+	BoxConstraint = 1.00
+	------------------------------
+	3971 support vectors out of 9220 training samples!
+	Weights (see: svm.Beta), Bias (see: svm.Bias)
+ 
+Elapsed time is 2.519424 seconds.
+
+confusion =
+
+        1645          71
+         279         310
+
+Gender accuracy =
+ 
+	 0.7137 	 0.1345  
+ 
+Total accuracy =
+ 
+	 0.8482  
+
+SVM training ...
+	KernelFunction = gaussian
+	2 * Sigma_squared = 80
+	Solver = SMO
+	BoxConstraint = 1.00
+	------------------------------
+	3797 support vectors out of 9220 training samples!
+	Weights (see: svm.Beta), Bias (see: svm.Bias)
+ 
+Elapsed time is 2.985101 seconds.
+
+confusion =
+
+        1657          60
+         176         412
+
+Gender accuracy =
+ 
+	 0.7189 	 0.1787  
+ 
+Total accuracy =
+ 
+	 0.8976  
+ 
