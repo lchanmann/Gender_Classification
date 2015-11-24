@@ -7,23 +7,16 @@ display(' ');
 clear;
 close all;
 
-diary('svm.log');
+diary(['logs/svm_' num2str(datestr(now,'yyyymmdd.HHMM')) '.log']);
 % load data
 load('X.mat');
 
 % data partition
-p = 0.2; % hold-out partition
-CV = cvpartition(y, 'Holdout', p);
-train_idx = training(CV);
-test_idx = test(CV);
-
-X_train = X(train_idx, :);
-y_train = y(train_idx, :);
-X_test = X(test_idx, :);
-y_test = y(test_idx, :);
+k = 5;
+CV = cvpartition(y, 'KFold', k);
 
 % SVM training
-kernel = 'polynomial';
+kernel = 'gaussian';
 kernel_scale = 'auto';
 % To use Quadratic Programming optimization (qp = 'L1QP')
 optimization = 'SMO';
@@ -41,8 +34,7 @@ end
 fprintf('\tKernelScale = %s\n', num2str(kernel_scale));
 fprintf('\tSolver = %s\n', optimization);
 fprintf('\tBoxConstraint = %0.2f\n', C);
-fprintf('\t------------------------------\n');
-svm = fitcsvm(X_train, y_train ...
+svm = fitcsvm(X, y ...
         , 'KernelFunction', kernel ...
         , 'KernelScale', kernel_scale ...
         ...% , 'ScoreTransform', 'sign' ...
@@ -51,18 +43,31 @@ svm = fitcsvm(X_train, y_train ...
         , 'CacheSize', 'maximal' ...
         ...% , 'KKTTolerance', 0.1 ...
         , 'BoxConstraint', C ...
+        , 'CVPartition', CV ...
         ...% , 'OutlierFraction', 0.01 ...
         ...% , 'Verbose', 1, 'NumPrint', 1000 ...
     );
-fprintf('\t%d support vectors out of %d training samples!\n', ...
-    sum(svm.IsSupportVector), length(y_train));
-fprintf('\tWeights (see: svm.Beta), Bias (see: svm.Bias)\n');
-disp(' ');
 toc
 
 % classification
-predicted = predict(svm, X_test);
-confusion = confusionmat(y_test, predicted);
+N = sum(training(CV, 1));
+for j = 1:svm.KFold
+    model = svm.Trained{j};
+    display(['Fold : ' num2str(j)]);
+    fprintf('------------------------------\n');
+    fprintf('\t%d support vectors out of %d training samples!\n', ...
+        length(model.SupportVectors), N);
+    disp(' ');
+    
+    test_idx = test(CV, j);
+    X_test = X(test_idx, :);
+    y_test = y(test_idx, :);
+    svm_accuracy
+end
+
+display('KFold Prediction:');
+predicted = kfoldPredict(svm);
+confusion = confusionmat(y, predicted);
 accuracy = confusion([1 4]) / sum(confusion(:));
 
 % print confusion and accuracy

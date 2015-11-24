@@ -1,0 +1,112 @@
+SVM training ...
+	KernelFunction = polynomial
+	PolynomialOrder = 3
+	KernelScale = auto
+	Solver = SMO
+	BoxConstraint = 1.00
+Elapsed time is 45.255164 seconds.
+Fold : 1
+------------------------------
+	3171 support vectors out of 9220 training samples!
+ 
+
+confusion =
+
+        1634          82
+         134         455
+
+Gender accuracy =
+ 
+	 0.7089 	 0.1974  
+ 
+Total accuracy =
+ 
+	 0.9063  
+ 
+Fold : 2
+------------------------------
+	3193 support vectors out of 9220 training samples!
+ 
+
+confusion =
+
+        1630          87
+         129         459
+
+Gender accuracy =
+ 
+	 0.7072 	 0.1991  
+ 
+Total accuracy =
+ 
+	 0.9063  
+ 
+Fold : 3
+------------------------------
+	3125 support vectors out of 9220 training samples!
+ 
+
+confusion =
+
+        1602         115
+         129         459
+
+Gender accuracy =
+ 
+	 0.6950 	 0.1991  
+ 
+Total accuracy =
+ 
+	 0.8941  
+ 
+Fold : 4
+------------------------------
+	3155 support vectors out of 9220 training samples!
+ 
+
+confusion =
+
+        1611         105
+         142         447
+
+Gender accuracy =
+ 
+	 0.6989 	 0.1939  
+ 
+Total accuracy =
+ 
+	 0.8928  
+ 
+Fold : 5
+	------------------------------
+	3211 support vectors out of 9220 training samples!
+ 
+
+confusion =
+
+        1619          97
+         128         461
+
+Gender accuracy =
+ 
+	 0.7024 	 0.2000  
+ 
+Total accuracy =
+ 
+	 0.9024  
+ 
+KFold Prediction:
+
+confusion =
+
+        8096         486
+         662        2281
+
+Gender accuracy =
+ 
+	 0.7025 	 0.1979  
+ 
+Total accuracy =
+ 
+	 0.9004  
+ 
