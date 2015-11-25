@@ -16,7 +16,7 @@ k = 5;
 CV = cvpartition(y, 'KFold', k);
 
 % SVM training
-kernel = 'gaussian';
+kernel = 'polynomial';
 kernel_scale = 'auto';
 % To use Quadratic Programming optimization (qp = 'L1QP')
 optimization = 'SMO';
@@ -24,6 +24,8 @@ polynomial_order = 3;
 % set upper-bound on \alpha. If C=Inf then svm don't allow
 % mis-classification
 C = 1;
+% mis-classification cost
+cost = [0 1; 1.5 0];
 
 tic;
 display('SVM training ...');
@@ -34,7 +36,8 @@ end
 fprintf('\tKernelScale = %s\n', num2str(kernel_scale));
 fprintf('\tSolver = %s\n', optimization);
 fprintf('\tBoxConstraint = %0.2f\n', C);
-svm = fitcsvm(X, y ...
+fprintf('\tCost = [ %s ]\n', sprintf(' %0.1f ', cost));
+svm_m = fitcsvm(X, y ...
         , 'KernelFunction', kernel ...
         , 'KernelScale', kernel_scale ...
         ...% , 'ScoreTransform', 'sign' ...
@@ -46,13 +49,14 @@ svm = fitcsvm(X, y ...
         , 'CVPartition', CV ...
         ...% , 'OutlierFraction', 0.01 ...
         ...% , 'Verbose', 1, 'NumPrint', 1000 ...
+        , 'Cost', cost ...
     );
 toc
 
 % classification
 N = sum(training(CV, 1));
-for j = 1:svm.KFold
-    model = svm.Trained{j};
+for j = 1:svm_m.KFold
+    model = svm_m.Trained{j};
     display(['Fold : ' num2str(j)]);
     fprintf('------------------------------\n');
     fprintf('\t%d support vectors out of %d training samples!\n', ...
@@ -66,7 +70,7 @@ for j = 1:svm.KFold
 end
 
 display('KFold Prediction:');
-predicted = kfoldPredict(svm);
+predicted = kfoldPredict(svm_m);
 confusion = confusionmat(y, predicted);
 accuracy = confusion([1 4]) / sum(confusion(:));
 
@@ -83,3 +87,19 @@ fprintf('\t %0.4f ', sum(accuracy));
 disp(' ');
 disp(' ');
 diary off;
+
+% % boosting
+% model = svm.Trained{1};
+% train_idx = training(CV, 1);
+% test_idx = test(CV, 1);
+% 
+% X_train = X(train_idx, :);
+% y_train = y(train_idx, :);
+% X_test = X(test_idx, :);
+% y_test = y(test_idx, :);
+% 
+% T = 5;
+% for i=1:T
+%     predicted = predict(model, X_test);
+%     confusion = confusionmat(y_test, predicted);
+% end
