@@ -1,3 +1,11 @@
+SVM parameters:
+	KernelFunction = polynomial
+	PolynomialOrder = 3
+	KernelScale = auto
+	Solver = SMO
+	BoxConstraint = 1.00
+	Cost = [  0.0  1.5  1.0  0.0  ]
+
 Train boosted SVM for fold-1...
 	Iteration 1: 
 		e = 0.00434
