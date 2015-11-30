@@ -91,14 +91,9 @@ for j=1:k
     test_idx = CV.test(j);
     X_test = X(test_idx, :);
     y_test = y(test_idx, :);
-    predicted = zeros(length(y_test), T);
     
-    for i=1:T
-        if alpha_t(j, i) > 0
-            predicted(:, i) = predict(models{j, i}, X_test);
-        end
-    end
-    Hx = sign(predicted * alpha_t(j, :)');
+    % ensemble prediction
+    Hx = predict_Hx(models(j, :), alpha_t(j, :), X_test);
     accuracy(j) = performance(Hx, y_test, 'Verbose');
 end
 
