@@ -36,9 +36,12 @@ fprintf('\tBoxConstraint = %0.2f\n', C);
 fprintf('\tCost = [ %s ]\n', sprintf(' %0.1f ', cost));
 disp(' ');
 
-% data partition
+% training and test set partition
+[ X_trainset, y_trainset, X_testset, y_testset] = random_split(X, y, .1);
+
+% 5-fold data partition
 k = 5;
-CV = cvpartition(y, 'KFold', k);
+CV = cvpartition(y_trainset, 'KFold', k);
 accuracy = zeros(k, 1);
 
 % boosting max iterations
@@ -77,17 +80,18 @@ for j=1:k
     accuracy(j) = performance(Hx, y_test, 'Verbose');
 end
 
-% classification accuracy on training set
-[N, ~] = size(X);
-prediction = zeros(N, k);
-for j=1:k
-    prediction(:, j) = predict_Hx(models{j}, X);
-end
-display('Training performance:');
-performance(sign(prediction*ones(k,1)), y, 'Verbose');
-disp(' ');
-
 % K-Fold accuracy
 fprintf('%d-Fold CV accuracy for boosted SVM = %0.5f', k, mean(accuracy));
 display(accuracy);
+
+% classification accuracy on test set
+[N, ~] = size(X_testset);
+prediction = zeros(N, k);
+for j=1:k
+    prediction(:, j) = predict_Hx(models{j}, X_testset);
+end
+display('Performance on testset:');
+performance(sign(prediction*ones(k,1)), y_testset, 'Verbose');
+disp(' ');
+
 diary off;
