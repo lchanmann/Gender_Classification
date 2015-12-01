@@ -1,0 +1,103 @@
+Train and test on LFW.mat
+SVM parameters:
+	KernelFunction = gaussian
+	KernelScale = auto
+	Solver = SMO
+	BoxConstraint = 1.00
+	Cost = [  0.0  1.5  1.0  0.0  ]
+ 
+Train boosted SVM for fold-1...
+	Iteration 1: 
+		e = 0.02554
+		Elapsed time is 193.090182 seconds.
+ 
+	Iteration 2: 
+		e = 0.01995
+		Elapsed time is 443.434721 seconds.
+ 
+
+confusion =
+
+        1664          46
+         190         293
+
+Aaccuracy =
+ 
+	 0.8924  
+ 
+Train boosted SVM for fold-2...
+	Iteration 1: 
+		e = 0.02291
+		Elapsed time is 203.422166 seconds.
+ 
+	Iteration 2: 
+		e = 0.02106
+		Elapsed time is 450.049313 seconds.
+ 
+
+confusion =
+
+        1658          53
+         177         305
+
+Aaccuracy =
+ 
+	 0.8951  
+ 
+Train boosted SVM for fold-3...
+	Iteration 1: 
+		e = 0.02497
+		Elapsed time is 198.081730 seconds.
+ 
+	Iteration 2: 
+{Operation terminated by user during <a href="matlab:matlab.internal.language.introspective.errorDocCallback('classreg.learning.impl.SVMImpl.make', 'C:\Program Files\MATLAB\R2015a\toolbox\stats\classreg\+classreg\+learning\+impl\SVMImpl.m', 417)" style="font-weight:bold">classreg.learning.impl.SVMImpl.make</a> (<a href="matlab: opentoline('C:\Program Files\MATLAB\R2015a\toolbox\stats\classreg\+classreg\+learning\+impl\SVMImpl.m',417,0)">line 417</a>)
+
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ClassificationSVM', 'C:\Program Files\MATLAB\R2015a\toolbox\stats\classreg\ClassificationSVM.m', 319)" style="font-weight:bold">ClassificationSVM</a> (<a href="matlab: opentoline('C:\Program Files\MATLAB\R2015a\toolbox\stats\classreg\ClassificationSVM.m',319,0)">line 319</a>)
+            this.Impl = classreg.learning.impl.SVMImpl.make(...
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('classreg.learning.FitTemplate/fit', 'C:\Program Files\MATLAB\R2015a\toolbox\stats\classreg\+classreg\+learning\FitTemplate.m', 251)" style="font-weight:bold">classreg.learning.FitTemplate/fit</a> (<a href="matlab: opentoline('C:\Program Files\MATLAB\R2015a\toolbox\stats\classreg\+classreg\+learning\FitTemplate.m',251,0)">line 251</a>)
+            obj = this.MakeFitObject(X,Y,W,this.ModelParams,fitArgs{:});
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ClassificationSVM.fit', 'C:\Program Files\MATLAB\R2015a\toolbox\stats\classreg\ClassificationSVM.m', 237)" style="font-weight:bold">ClassificationSVM.fit</a> (<a href="matlab: opentoline('C:\Program Files\MATLAB\R2015a\toolbox\stats\classreg\ClassificationSVM.m',237,0)">line 237</a>)
+            this = fit(temp,X,Y);
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('fitcsvm', 'C:\Program Files\MATLAB\R2015a\toolbox\stats\classreg\fitcsvm.m', 279)" style="font-weight:bold">fitcsvm</a> (<a href="matlab: opentoline('C:\Program Files\MATLAB\R2015a\toolbox\stats\classreg\fitcsvm.m',279,0)">line 279</a>)
+obj = ClassificationSVM.fit(X,Y,varargin{:});
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('boosting', 'C:\Users\cl9p8\Gender_Classification\boosting.m', 29)" style="font-weight:bold">boosting</a> (<a href="matlab: opentoline('C:\Users\cl9p8\Gender_Classification\boosting.m',29,0)">line 29</a>)
+        classifier = learner(X_train, y_train ...
+} 
+models
+
+models = 
+
+    [1x1 struct]
+    [1x1 struct]
+    []
+    []
+    []
+
+[N, ~] = size(X_testset);
+prediction = zeros(N, k);
+for j=1:2
+    prediction(:, j) = predict_Hx(models{j}, X_testset);
+end
+display('Performance on testset:');
+Performance on testset:
+performance(sign(prediction*ones(k,1)), y_testset, 'Verbose');
+
+confusion =
+
+   280     3     4
+     0     0     0
+    44    43   186
+
+Aaccuracy =
+ 
+	 0.5054  
+ 
+disp(' ');
+ 
+
+diary off;
