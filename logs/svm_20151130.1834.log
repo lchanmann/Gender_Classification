@@ -1,0 +1,203 @@
+SVM parameters:
+	KernelFunction = gaussian
+	KernelScale = auto
+	Solver = SMO
+	BoxConstraint = 1.00
+	Cost = [  0.0  1.5  1.0  0.0  ]
+ 
+Train boosted SVM for fold-1...
+	Iteration 1: 
+		e = 0.03113
+		Elapsed time is 4.313839 seconds.
+ 
+	Iteration 2: 
+		e = 0.02166
+		Elapsed time is 9.091482 seconds.
+ 
+	Iteration 3: 
+		e = 0.01688
+		Elapsed time is 14.569364 seconds.
+ 
+	Iteration 4: 
+		e = 0.02246
+		Elapsed time is 21.193870 seconds.
+ 
+	Iteration 5: 
+		e = 0.02505
+		Elapsed time is 27.570266 seconds.
+ 
+	Iteration 6: 
+		e = 0.03921
+		Elapsed time is 33.306005 seconds.
+ 
+
+confusion =
+
+        1630          86
+         144         445
+
+Aaccuracy =
+ 
+	 0.9002  
+ 
+Train boosted SVM for fold-2...
+	Iteration 1: 
+		e = 0.03059
+		Elapsed time is 4.183300 seconds.
+ 
+	Iteration 2: 
+		e = 0.02344
+		Elapsed time is 9.032814 seconds.
+ 
+	Iteration 3: 
+		e = 0.01747
+		Elapsed time is 14.910178 seconds.
+ 
+	Iteration 4: 
+		e = 0.01565
+		Elapsed time is 21.356616 seconds.
+ 
+	Iteration 5: 
+		e = 0.02600
+		Elapsed time is 27.598052 seconds.
+ 
+	Iteration 6: 
+		e = 0.03469
+		Elapsed time is 33.430118 seconds.
+ 
+
+confusion =
+
+        1629          88
+         169         419
+
+Aaccuracy =
+ 
+	 0.8885  
+ 
+Train boosted SVM for fold-3...
+	Iteration 1: 
+		e = 0.03330
+		Elapsed time is 4.259970 seconds.
+ 
+	Iteration 2: 
+		e = 0.02373
+		Elapsed time is 9.067780 seconds.
+ 
+	Iteration 3: 
+		e = 0.01776
+		Elapsed time is 15.240280 seconds.
+ 
+	Iteration 4: 
+		e = 0.02591
+		Elapsed time is 21.685784 seconds.
+ 
+	Iteration 5: 
+		e = 0.02850
+		Elapsed time is 28.077711 seconds.
+ 
+	Iteration 6: 
+		e = 0.03472
+		Elapsed time is 34.320894 seconds.
+ 
+
+confusion =
+
+        1621          96
+         132         456
+
+Aaccuracy =
+ 
+	 0.9011  
+ 
+Train boosted SVM for fold-4...
+	Iteration 1: 
+		e = 0.03275
+		Elapsed time is 4.186995 seconds.
+ 
+	Iteration 2: 
+		e = 0.02321
+		Elapsed time is 9.118835 seconds.
+ 
+	Iteration 3: 
+		e = 0.02588
+		Elapsed time is 15.102101 seconds.
+ 
+	Iteration 4: 
+		e = 0.01632
+		Elapsed time is 21.498401 seconds.
+ 
+	Iteration 5: 
+		e = 0.03422
+		Elapsed time is 27.595756 seconds.
+ 
+	Iteration 6: 
+		e = 0.03407
+		Elapsed time is 33.546006 seconds.
+ 
+
+confusion =
+
+        1626          90
+         154         435
+
+Aaccuracy =
+ 
+	 0.8941  
+ 
+Train boosted SVM for fold-5...
+	Iteration 1: 
+		e = 0.03275
+		Elapsed time is 3.964229 seconds.
+ 
+	Iteration 2: 
+		e = 0.02041
+		Elapsed time is 8.934367 seconds.
+ 
+	Iteration 3: 
+		e = 0.01749
+		Elapsed time is 14.998804 seconds.
+ 
+	Iteration 4: 
+		e = 0.02108
+		Elapsed time is 21.411367 seconds.
+ 
+	Iteration 5: 
+		e = 0.02788
+		Elapsed time is 27.918947 seconds.
+ 
+	Iteration 6: 
+		e = 0.02584
+		Elapsed time is 33.931798 seconds.
+ 
+
+confusion =
+
+        1634          82
+         145         444
+
+Aaccuracy =
+ 
+	 0.9015  
+ 
+Training performance:
+
+confusion =
+
+        8582           0
+           0        2943
+
+Aaccuracy =
+ 
+	 1.0000  
+ 
+ 
+5-Fold CV accuracy for boosted SVM = 0.89709
+accuracy =
+
+    0.9002
+    0.8885
+    0.9011
+    0.8941
+    0.9015
+
