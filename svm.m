@@ -73,8 +73,7 @@ for j=1:k
     y_test = y(test_idx, :);
     
     % ensemble prediction
-    Hx = predict_Hx(models{j}.Classifiers, ...
-        models{j}.AlphaT, X_test);
+    Hx = predict_Hx(models{j}, X_test);
     accuracy(j) = performance(Hx, y_test, 'Verbose');
 end
 
@@ -82,8 +81,7 @@ end
 [N, ~] = size(X);
 prediction = zeros(N, k);
 for j=1:k
-    prediction(:, j) = predict_Hx(models{j}.Classifiers, ...
-        models{j}.AlphaT, X);
+    prediction(:, j) = predict_Hx(models{j}, X);
 end
 display('Training performance:');
 performance(sign(prediction*ones(k,1)), y, 'Verbose');

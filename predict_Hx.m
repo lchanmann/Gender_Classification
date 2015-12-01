@@ -1,13 +1,18 @@
-function [ Hx ] = predict_Hx( models, alpha_t, X )
+function [ Hx ] = predict_Hx( model, X )
 % PREDICT_HX predict boosting model
+%
+%   model - ensemble classifiers along with classifiers' strength
+%       model.Classifiers - all classifiers in the ensemble
+%       model.AlphaT      - strength of the classifiers
+%
 
 [N, ~] = size(X);
-T = length(alpha_t);
+T = length(model.AlphaT);
 
 predicted = zeros(N, T);
 for i=1:T
-    if alpha_t(i) > 0
-        predicted(:, i) = predict(models{i}, X);
+    if model.AlphaT(i) > 0
+        predicted(:, i) = predict(model.Classifiers{i}, X);
     end
 end
-Hx = sign(predicted * alpha_t');
+Hx = sign(predicted * model.AlphaT');
