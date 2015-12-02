@@ -24,6 +24,6 @@ display('          Classifier Accuracy with Boosting              ');
 display('_________________________________________________________');
 display(' ');
 % prediction accuracy
-boosted_accuracy = gender_accuracy(predict(model, X_1), y_1)
+boosted_accuracy = gender_accuracy(predict(model, X_1), y_1,1,2)
 toc
 pause;

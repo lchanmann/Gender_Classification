@@ -23,6 +23,6 @@ display('        Classification Accuracy with Boosting            ');
 display('_________________________________________________________');
 display(' ');
 % prediction accuracy
-svm_accuracy = gender_accuracy(predict(model, X_1), y_1)
+svm_accuracy = gender_accuracy(predict(model, X_1), y_1,1,2)
 toc
 pause;
