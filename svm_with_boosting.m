@@ -8,11 +8,14 @@ clear;
 close all;
 
 diary(['logs/svm_' num2str(datestr(now,'yyyymmdd.HHMM')) '.log']);
-% load data
-load('X.mat');
-% use -1, +1 instead of 1, 2
-y(y==1) = -1;
-y(y==2) = +1;
+% % load data
+% load('X.mat');
+% % use -1, +1 instead of 1, 2
+% y(y==1) = -1;
+% y(y==2) = +1;
+
+% use the same data spliting
+load('train-test_split.mat');
 
 % SVM training parameters
 kernel = 'gaussian';
@@ -24,7 +27,7 @@ polynomial_order = 3;
 % mis-classification
 C = 1;
 % mis-classification cost
-cost = [0 1; 1.5 0];
+cost = [0 10; 29 0];
 display('SVM parameters:');
 fprintf('\tKernelFunction = %s\n', kernel);
 if (strcmpi(kernel, 'polynomial'))
@@ -37,22 +40,21 @@ fprintf('\tCost = [ %s ]\n', sprintf(' %0.1f ', cost));
 disp(' ');
 
 % training and test set partition
-[ X_trainset, y_trainset, X_testset, y_testset] = random_split(X, y, .1);
+% [ X_trainset, y_trainset, X_testset, y_testset] = random_split(X, y, .1);
 
 % 5-fold data partition
 k = 5;
-CV = cvpartition(y_trainset, 'KFold', k);
+% CV = cvpartition(y_trainset, 'KFold', k);
 accuracy = zeros(k, 1);
 
 % boosting max iterations
-T = 6;
+T = 16;
 
 models = cell(k, 1);
-% alpha_t = zeros(k, T);
 for j=1:k
     train_idx = CV.training(j);
-    X_train = X(train_idx, :);
-    y_train = y(train_idx, :);
+    X_train = X_trainset(train_idx, :);
+    y_train = y_trainset(train_idx, :);
     
     % boosting
     fprintf('Train boosted SVM for fold-%d...\n', j);
@@ -72,8 +74,8 @@ for j=1:k
     
     % measure boosted svm performance on validation set
     test_idx = CV.test(j);
-    X_test = X(test_idx, :);
-    y_test = y(test_idx, :);
+    X_test = X_trainset(test_idx, :);
+    y_test = y_trainset(test_idx, :);
     
     % ensemble prediction
     Hx = predict_Hx(models{j}, X_test);
