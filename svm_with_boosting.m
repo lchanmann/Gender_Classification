@@ -7,7 +7,7 @@ display(' ');
 clear;
 close all;
 
-diary(['logs/svm_no_boost_' num2str(datestr(now,'yyyymmdd.HHMM')) '.log']);
+diary(['logs/svm_' num2str(datestr(now,'yyyymmdd.HHMM')) '.log']);
 % load data
 load('X.mat');
 % use -1, +1 instead of 1, 2
@@ -15,7 +15,7 @@ y(y==1) = -1;
 y(y==2) = +1;
 
 % SVM training parameters
-kernel = 'gaussian';
+kernel = 'linear';
 kernel_scale = 'auto';
 % To use Quadratic Programming optimization (qp = 'L1QP')
 optimization = 'SMO';
@@ -30,7 +30,7 @@ fprintf('\tKernelFunction = %s\n', kernel);
 if (strcmpi(kernel, 'polynomial'))
     fprintf('\tPolynomialOrder = %d\n', polynomial_order);
 end
-% fprintf('\tKernelScale = %s\n', num2str(kernel_scale));
+fprintf('\tKernelScale = %s\n', num2str(kernel_scale));
 fprintf('\tSolver = %s\n', optimization);
 fprintf('\tBoxConstraint = %0.2f\n', C);
 fprintf('\tCost = [ %s ]\n', sprintf(' %0.1f ', cost));
@@ -55,10 +55,10 @@ for j=1:k
     y_train = y(train_idx, :);
     
     % boosting
-    fprintf('Train SVM (non-boosted) for fold-%d...\n', j);
-    models{j} = fitcsvm(X_train, y_train ...
+    fprintf('Train boosted SVM for fold-%d...\n', j);
+    models{j} = boosting(X_train, y_train, @fitcsvm, T ...
             , 'KernelFunction', kernel ...
-            ...% , 'KernelScale', kernel_scale ...
+            , 'KernelScale', kernel_scale ...
             ...% , 'ScoreTransform', 'sign' ...
             , 'Solver', optimization ...
             ...% , 'PolynomialOrder', polynomial_order ...
@@ -76,19 +76,19 @@ for j=1:k
     y_test = y(test_idx, :);
     
     % ensemble prediction
-    prediction = predict(models{j}, X_test);
-    accuracy(j) = performance(prediction, y_test, 'Verbose');
+    Hx = predict_Hx(models{j}, X_test);
+    accuracy(j) = performance(Hx, y_test, 'Verbose');
 end
 
 % K-Fold accuracy
-fprintf('%d-Fold CV accuracy for SVM = %0.5f', k, mean(accuracy));
+fprintf('%d-Fold CV accuracy for boosted SVM = %0.5f', k, mean(accuracy));
 display(accuracy);
 
 % classification accuracy on test set
 [N, ~] = size(X_testset);
 prediction = zeros(N, k);
 for j=1:k
-    prediction(:, j) = predict(models{j}, X_testset);
+    prediction(:, j) = predict_Hx(models{j}, X_testset);
 end
 display('Performance on testset:');
 performance(sign(prediction*ones(k,1)), y_testset, 'Verbose');
