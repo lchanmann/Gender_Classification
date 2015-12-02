@@ -27,13 +27,13 @@ polynomial_order = 3;
 % mis-classification
 C = 1;
 % mis-classification cost
-cost = [0 1; 1.5 0];
+cost = [0 1; 1 0];
 display('SVM parameters:');
 fprintf('\tKernelFunction = %s\n', kernel);
 if (strcmpi(kernel, 'polynomial'))
     fprintf('\tPolynomialOrder = %d\n', polynomial_order);
 end
-% fprintf('\tKernelScale = %s\n', num2str(kernel_scale));
+fprintf('\tKernelScale = %s\n', num2str(kernel_scale));
 fprintf('\tSolver = %s\n', optimization);
 fprintf('\tBoxConstraint = %0.2f\n', C);
 fprintf('\tCost = [ %s ]\n', sprintf(' %0.1f ', cost));
@@ -54,14 +54,14 @@ models = cell(k, 1);
 % alpha_t = zeros(k, T);
 for j=1:k
     train_idx = CV.training(j);
-    X_train = X(train_idx, :);
-    y_train = y(train_idx, :);
+    X_train = X_trainset(train_idx, :);
+    y_train = y_trainset(train_idx, :);
     
     % boosting
     fprintf('Train SVM (non-boosted) for fold-%d...\n', j);
     models{j} = fitcsvm(X_train, y_train ...
             , 'KernelFunction', kernel ...
-            ...% , 'KernelScale', kernel_scale ...
+            , 'KernelScale', kernel_scale ...
             ...% , 'ScoreTransform', 'sign' ...
             , 'Solver', optimization ...
             ...% , 'PolynomialOrder', polynomial_order ...
@@ -70,13 +70,13 @@ for j=1:k
             , 'BoxConstraint', C ...
             ...% , 'OutlierFraction', 0.01 ...
             ...% , 'Verbose', 1, 'NumPrint', 1000 ...
-            ...% , 'Cost', cost ...,
+            , 'Cost', cost ...,
         );    
     
     % measure boosted svm performance on validation set
     test_idx = CV.test(j);
-    X_test = X(test_idx, :);
-    y_test = y(test_idx, :);
+    X_test = X_trainset(test_idx, :);
+    y_test = y_trainset(test_idx, :);
     
     % ensemble prediction
     prediction = predict(models{j}, X_test);
