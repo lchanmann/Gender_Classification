@@ -15,7 +15,7 @@ y(y==1) = -1;
 y(y==2) = +1;
 
 % SVM training parameters
-kernel = 'linear';
+kernel = 'gaussian';
 kernel_scale = 'auto';
 % To use Quadratic Programming optimization (qp = 'L1QP')
 optimization = 'SMO';

@@ -35,16 +35,23 @@ function model = boosting( X_train, y_train, learner, T, varargin )
         prediction = predict(classifier, X_train);
         misclassified = prediction ~= y_train;
         
-        [W, a, e] = weights_update(W, misclassified);
-        if e == 0
-            break;
+        if sum(misclassified) == 0
+            model.AlphaT(i) = 1;
+            e = 0;
+        else
+            [W, a, e] = weights_update(W, misclassified);
+            model.AlphaT(i) = a;
         end
-        model.AlphaT(i) = a;
+        
         fprintf('\t\t# of misclassified = %d out of %d\n', sum(misclassified), N);
         fprintf('\t\te = %0.5f\n', e);
         fprintf('\t\t');
         toc
         disp(' ');
+        
+        if e == 0
+            break;
+        end
     end
 end
 
