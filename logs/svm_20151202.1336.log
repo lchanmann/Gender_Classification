@@ -1,0 +1,232 @@
+SVM parameters:
+	KernelFunction = linear
+	Solver = SMO
+	BoxConstraint = 1.00
+	Cost = [  0.0  1.5  1.0  0.0  ]
+ 
+Train boosted SVM for fold-1...
+	Iteration 1: 
+		# of misclassified = 2267 out of 8766
+		e = 0.25861
+		Elapsed time is 150.397208 seconds.
+ 
+	Iteration 2: 
+		# of misclassified = 3116 out of 8766
+		e = 0.42026
+		Elapsed time is 302.792456 seconds.
+ 
+	Iteration 3: 
+		# of misclassified = 2729 out of 8766
+		e = 0.48364
+		Elapsed time is 452.745093 seconds.
+ 
+	Iteration 4: 
+		# of misclassified = 2493 out of 8766
+		e = 0.42611
+		Elapsed time is 606.359470 seconds.
+ 
+	Iteration 5: 
+		# of misclassified = 2103 out of 8766
+		e = 0.42719
+		Elapsed time is 754.658321 seconds.
+ 
+	Iteration 6: 
+		# of misclassified = 2279 out of 8766
+		e = 0.41015
+		Elapsed time is 903.354178 seconds.
+ 
+
+confusion =
+
+        1518         195
+         355         123
+
+Aaccuracy =
+ 
+	 0.7490  
+ 
+Train boosted SVM for fold-2...
+	Iteration 1: 
+		# of misclassified = 2131 out of 8765
+		e = 0.24313
+		Elapsed time is 149.199907 seconds.
+ 
+	Iteration 2: 
+		# of misclassified = 3385 out of 8765
+		e = 0.49115
+		Elapsed time is 299.401158 seconds.
+ 
+	Iteration 3: 
+		# of misclassified = 2664 out of 8765
+		e = 0.39544
+		Elapsed time is 452.325102 seconds.
+ 
+	Iteration 4: 
+		# of misclassified = 3109 out of 8765
+		e = 0.54828
+		Elapsed time is 608.575671 seconds.
+ 
+	Iteration 5: 
+		# of misclassified = 2560 out of 8765
+		e = 0.47164
+		Elapsed time is 763.241118 seconds.
+ 
+	Iteration 6: 
+		# of misclassified = 2364 out of 8765
+		e = 0.35294
+		Elapsed time is 914.411868 seconds.
+ 
+
+confusion =
+
+        1629          87
+         434          42
+
+Aaccuracy =
+ 
+	 0.7623  
+ 
+Train boosted SVM for fold-3...
+	Iteration 1: 
+		# of misclassified = 2776 out of 8765
+		e = 0.31671
+		Elapsed time is 149.859160 seconds.
+ 
+	Iteration 2: 
+		# of misclassified = 3434 out of 8765
+		e = 0.41956
+		Elapsed time is 301.719408 seconds.
+ 
+	Iteration 3: 
+		# of misclassified = 3071 out of 8765
+		e = 0.35145
+		Elapsed time is 453.828264 seconds.
+ 
+	Iteration 4: 
+		# of misclassified = 2686 out of 8765
+		e = 0.42523
+		Elapsed time is 606.792074 seconds.
+ 
+	Iteration 5: 
+		# of misclassified = 2238 out of 8765
+		e = 0.40386
+		Elapsed time is 762.686760 seconds.
+ 
+	Iteration 6: 
+		# of misclassified = 2449 out of 8765
+		e = 0.47729
+		Elapsed time is 915.339734 seconds.
+ 
+
+confusion =
+
+        1582         129
+         403          78
+
+Aaccuracy =
+ 
+	 0.7573  
+ 
+Train boosted SVM for fold-4...
+	Iteration 1: 
+		# of misclassified = 2786 out of 8766
+		e = 0.31782
+		Elapsed time is 153.721732 seconds.
+ 
+	Iteration 2: 
+		# of misclassified = 1992 out of 8766
+		e = 0.27372
+		Elapsed time is 308.246856 seconds.
+ 
+	Iteration 3: 
+		# of misclassified = 2965 out of 8766
+		e = 0.38262
+		Elapsed time is 461.839346 seconds.
+ 
+	Iteration 4: 
+		# of misclassified = 2852 out of 8766
+		e = 0.44847
+		Elapsed time is 616.377299 seconds.
+ 
+	Iteration 5: 
+		# of misclassified = 2855 out of 8766
+		e = 0.47604
+		Elapsed time is 767.173580 seconds.
+ 
+	Iteration 6: 
+		# of misclassified = 2722 out of 8766
+		e = 0.51052
+		Elapsed time is 918.697138 seconds.
+ 
+
+confusion =
+
+        1586         131
+         374         100
+
+Aaccuracy =
+ 
+	 0.7695  
+ 
+Train boosted SVM for fold-5...
+	Iteration 1: 
+		# of misclassified = 2604 out of 8766
+		e = 0.29706
+		Elapsed time is 148.344439 seconds.
+ 
+	Iteration 2: 
+		# of misclassified = 2879 out of 8766
+		e = 0.43018
+		Elapsed time is 302.635272 seconds.
+ 
+	Iteration 3: 
+		# of misclassified = 2970 out of 8766
+		e = 0.45407
+		Elapsed time is 452.470952 seconds.
+ 
+	Iteration 4: 
+		# of misclassified = 2712 out of 8766
+		e = 0.44751
+		Elapsed time is 606.634364 seconds.
+ 
+	Iteration 5: 
+		# of misclassified = 2369 out of 8766
+		e = 0.47244
+		Elapsed time is 769.123741 seconds.
+ 
+	Iteration 6: 
+		# of misclassified = 2578 out of 8766
+		e = 0.49785
+		Elapsed time is 928.765810 seconds.
+ 
+
+confusion =
+
+        1477         248
+         370          96
+
+Aaccuracy =
+ 
+	 0.7179  
+ 
+5-Fold CV accuracy for boosted SVM = 0.75121
+accuracy =
+
+    0.7490
+    0.7623
+    0.7573
+    0.7695
+    0.7179
+
+Performance on testset:
+
+confusion =
+
+   279     8
+   258    23
+
+Aaccuracy =
+ 
+	 0.5317  
+ 
+ 
