@@ -27,7 +27,7 @@ polynomial_order = 3;
 % mis-classification
 C = 1;
 % mis-classification cost
-cost = [0 1; 1.5 0];
+cost = [0 10; 29 0];
 display('SVM parameters:');
 fprintf('\tKernelFunction = %s\n', kernel);
 if (strcmpi(kernel, 'polynomial'))
