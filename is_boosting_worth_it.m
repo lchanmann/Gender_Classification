@@ -20,14 +20,14 @@ display('                                                         ');
 display('       Classifier Accuracy without Boosting              ');
 display('_________________________________________________________');
 display(' ');
-noboost_accuracy_estimate = gender_accuracy(predict(noboost_BN_est, X), y)
+noboost_accuracy_estimate = gender_accuracy(predict(noboost_BN_est, X), y,1,2)
 pause;
 display('_________________________________________________________');
 display('                                                         ');
 display('          Classifier Accuracy with Boosting              ');
 display('_________________________________________________________');
 display(' ');
-boosted_accuracy_estimate = gender_accuracy(predict(boosted_BN_est, X), y)
+boosted_accuracy_estimate = gender_accuracy(predict(boosted_BN_est, X), y,1,2)
 pause;
 if(noboost_accuracy_estimate.males < noboost_accuracy_estimate.females)
     if(noboost_accuracy_estimate.males < boosted_accuracy_estimate.males)
