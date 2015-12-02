@@ -27,7 +27,7 @@ polynomial_order = 3;
 % mis-classification
 C = 1;
 % mis-classification cost
-cost = [0 1; 1 0];
+cost = [0 1; 1.5 0];
 display('SVM parameters:');
 fprintf('\tKernelFunction = %s\n', kernel);
 if (strcmpi(kernel, 'polynomial'))
@@ -47,11 +47,7 @@ k = 5;
 % CV = cvpartition(y_trainset, 'KFold', k);
 accuracy = zeros(k, 1);
 
-% boosting max iterations
-T = 16;
-
 models = cell(k, 1);
-% alpha_t = zeros(k, T);
 for j=1:k
     train_idx = CV.training(j);
     X_train = X_trainset(train_idx, :);
