@@ -68,8 +68,8 @@ display('_________________________________________________________');
 display(' ');
 
 % 5-fold data partition
-k = 5;
-CV = cvpartition(y_trainset, 'KFold', k);
+k=1;%k = 5;
+%CV = cvpartition(y_trainset, 'KFold', k);
 accuracy = zeros(k, 1);
 
 % boosting max iterations
@@ -77,28 +77,28 @@ T = 6;
 
 models = cell(k, 1);
 % alpha_t = zeros(k, T);
-for j=1:k
-    train_idx = CV.training(j);
-    X_train = X(train_idx, :);
-    y_train = y(train_idx, :);
+j=1;%for j=1:k
+    %train_idx = CV.training(j);
+    X_train = train_X;%X(train_idx, :);
+    y_train = train_Y;%(train_idx, :);
     
     % boosting
-    fprintf('Train boosted KNN for fold-%d...\n', j);
+    fprintf('Train boosted %d-NN for fold-%d...\n', neighbors, j);
     models{j} = boosting(X_train, y_train, @fitcknn, T, ...
                          'NumNeighbors',neighbors,'Prior','uniform');    
     
     % measure boosted svm performance on validation set
-    test_idx = CV.test(j);
-    X_test = X(test_idx, :);
-    y_test = y(test_idx, :);
+    %test_idx = CV.test(j);
+    X_test = test_X;%X(test_idx, :);
+    y_test = test_Y;%y(test_idx, :);
     
     % ensemble prediction
     Hx = predict_Hx(models{j}, X_test);
     accuracy(j) = performance(Hx, y_test, 'Verbose');
-end
+%end
 
 % K-Fold accuracy
-fprintf('%d-Fold CV accuracy for boosted SVM = %0.5f', k, mean(accuracy));
+fprintf('%d-Fold CV accuracy for boosted %d-NN = %0.5f', neighbors, k, mean(accuracy));
 display(accuracy);
 
 % classification accuracy on test set
