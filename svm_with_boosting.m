@@ -18,7 +18,7 @@ diary(['logs/svm_' num2str(datestr(now,'yyyymmdd.HHMM')) '.log']);
 load('train-test_split.mat');
 
 % SVM training parameters
-kernel = 'linear';
+kernel = 'gaussian';
 kernel_scale = 'auto';
 % To use Quadratic Programming optimization (qp = 'L1QP')
 optimization = 'SMO';
@@ -49,7 +49,7 @@ k = 5;
 accuracy = zeros(k, 1);
 
 % boosting max iterations
-T = 16;
+T = 6;
 
 % For reproducibility
 rng(1);
@@ -91,6 +91,21 @@ end
 fprintf('%d-Fold CV accuracy for boosted SVM = %0.5f', k, mean(accuracy));
 display(accuracy);
 
+% training accuracy
+[N, ~] = size(X_trainset);
+display('Performance on training set:');
+
+accTrain = zeros(1, T);
+for t=1:T
+    prediction = zeros(N, k);
+    for j=1:k
+        prediction(:, j) = predict_Hx(models{j}, X_trainset, t);
+    end
+    fprintf('t = %d', t);
+    accTrain(t) = performance(sign(prediction*ones(k,1)), y_trainset, 'Verbose');
+    disp(' ');
+end
+
 % classification accuracy on test set
 [N, ~] = size(X_testset);
 display('Performance on testset:');
@@ -107,3 +122,10 @@ for t=1:T
 end
 
 diary off;
+
+% plot accuracy on testset
+figure;
+subplot(1,2,1); plot(accTrain);
+title('Errors vs Rounds of boosting (Training)');
+subplot(1,2,2); plot(accTest);
+title('Errors vs Rounds of boosting (Test)');
