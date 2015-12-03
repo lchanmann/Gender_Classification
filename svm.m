@@ -18,14 +18,14 @@ diary(['logs/svm_no_boost_' num2str(datestr(now,'yyyymmdd.HHMM')) '.log']);
 load('train-test_split.mat');
 
 % SVM training parameters
-kernel = 'gaussian';
+kernel = 'polynomial';
 kernel_scale = 'auto';
 % To use Quadratic Programming optimization (qp = 'L1QP')
 optimization = 'SMO';
 polynomial_order = 3;
 % set upper-bound on \alpha. If C=Inf then svm don't allow
 % mis-classification
-C = 1;
+C = 10;
 % mis-classification cost
 cost = [0 10; 29 0];
 display('SVM parameters:');

@@ -1,0 +1,16 @@
+SVM parameters:
+	KernelFunction = gaussian
+	Solver = SMO
+	BoxConstraint = 1.00
+	Cost = [  0.0  1.5  1.0  0.0  ]
+ 
+{Undefined variable X.
+
+Error in <a href="matlab:helpUtils.errorDocCallback('svm', 'C:\Users\Adil\Desktop\Gender_Classification\svm.m', 57)" style="font-weight:bold">svm</a> (<a href="matlab: opentoline('C:\Users\Adil\Desktop\Gender_Classification\svm.m',57,0)">line 57</a>)
+    X_train = X(train_idx, :);
+} 
+clear
+load('train-test_split.mat')
+cv_1=CV.test(1);
+cv_1=CV.training(1);
+diary off

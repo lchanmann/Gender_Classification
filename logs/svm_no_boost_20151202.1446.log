@@ -1,0 +1,26 @@
+SVM parameters:
+	KernelFunction = gaussian
+	Solver = SMO
+	BoxConstraint = 1.00
+	Cost = [  0.0  1.5  1.0  0.0  ]
+ 
+Train SVM (non-boosted) for fold-1...
+{Operation terminated by user during <a href="matlab:helpUtils.errorDocCallback('classreg.learning.impl.SVMImpl.make', 'C:\Program Files\MATLAB\R2014a\toolbox\stats\classreg\+classreg\+learning\+impl\SVMImpl.m', 414)" style="font-weight:bold">classreg.learning.impl.SVMImpl.make</a> (<a href="matlab: opentoline('C:\Program Files\MATLAB\R2014a\toolbox\stats\classreg\+classreg\+learning\+impl\SVMImpl.m',414,0)">line 414</a>)
+
+
+In <a href="matlab:helpUtils.errorDocCallback('ClassificationSVM', 'C:\Program Files\MATLAB\R2014a\toolbox\stats\classreg\ClassificationSVM.m', 262)" style="font-weight:bold">ClassificationSVM</a> (<a href="matlab: opentoline('C:\Program Files\MATLAB\R2014a\toolbox\stats\classreg\ClassificationSVM.m',262,0)">line 262</a>)
+            this.Impl = classreg.learning.impl.SVMImpl.make(...
+
+In <a href="matlab:helpUtils.errorDocCallback('classreg.learning.FitTemplate/fit', 'C:\Program Files\MATLAB\R2014a\toolbox\stats\classreg\+classreg\+learning\FitTemplate.m', 243)" style="font-weight:bold">classreg.learning.FitTemplate/fit</a> (<a href="matlab: opentoline('C:\Program Files\MATLAB\R2014a\toolbox\stats\classreg\+classreg\+learning\FitTemplate.m',243,0)">line 243</a>)
+            obj = this.MakeFitObject(X,Y,W,this.ModelParams,fitArgs{:});
+
+In <a href="matlab:helpUtils.errorDocCallback('ClassificationSVM.fit', 'C:\Program Files\MATLAB\R2014a\toolbox\stats\classreg\ClassificationSVM.m', 235)" style="font-weight:bold">ClassificationSVM.fit</a> (<a href="matlab: opentoline('C:\Program Files\MATLAB\R2014a\toolbox\stats\classreg\ClassificationSVM.m',235,0)">line 235</a>)
+            this = fit(temp,X,Y);
+
+In <a href="matlab:helpUtils.errorDocCallback('fitcsvm', 'C:\Program Files\MATLAB\R2014a\toolbox\stats\classreg\fitcsvm.m', 279)" style="font-weight:bold">fitcsvm</a> (<a href="matlab: opentoline('C:\Program Files\MATLAB\R2014a\toolbox\stats\classreg\fitcsvm.m',279,0)">line 279</a>)
+obj = ClassificationSVM.fit(X,Y,varargin{:});
+
+In <a href="matlab:helpUtils.errorDocCallback('svm', 'C:\Users\Adil\Desktop\Gender_Classification\svm.m', 62)" style="font-weight:bold">svm</a> (<a href="matlab: opentoline('C:\Users\Adil\Desktop\Gender_Classification\svm.m',62,0)">line 62</a>)
+    models{j} = fitcsvm(X_train, y_train ...
+} 
+diary off
