@@ -98,6 +98,8 @@ T = 16;
 alpha_t = zeros(k, T);
 boosted_models = cell(k, 1);
 boosted_accuracy = zeros(k,1);
+misclassifieds = zeros(k,T);
+h = waitbar(0,sprintf('Crossvalidating boosted %d-NN',neighbors));
 for j=1:k
     train_idx = CV.training(j);
     X_train = X_trainset(train_idx, :);
@@ -105,9 +107,11 @@ for j=1:k
     
     % boosting
     fprintf('Train boosted %d-NN for fold-%d...\n', neighbors, j);
-    boosted_models{j} = boosting(X_train, y_train, @fitcknn, T, ...
-                                 'NumNeighbors',neighbors,'Prior','uniform');    
+    [boosted_models{j}, misclassifieds(j,:)] = ...
+                            boosting(X_train, y_train, @fitcknn, T, ...
+                            'NumNeighbors', neighbors,'Prior','uniform');    
     
+    waitbar(j/k,h,sprintf('Crossvalidating boosted %d-NN fold %d of %d',neighbors,j,k));
     % measure boosted svm performance on validation set
     test_idx = CV.test(j);
     X_test = X_trainset(test_idx, :);
@@ -121,6 +125,14 @@ end
 % K-Fold accuracy
 fprintf('%d-Fold CV accuracy for boosted %d-NN = %0.5f', k, neighbors, mean(boosted_accuracy));
 display(boosted_accuracy);
+
+figure
+surf(misclassifieds)
+title(sprintf('Number of training set misclassifications by boosted learners (%d-NN)',neighbors))
+ylabel('Fold number')
+xlabel('Iteration of Adaboost')
+
+
 
 % classification accuracy on test set
 [N, ~] = size(X_testset);
