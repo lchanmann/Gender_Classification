@@ -18,7 +18,7 @@ diary(['logs/svm_no_boost_' num2str(datestr(now,'yyyymmdd.HHMM')) '.log']);
 load('train-test_split.mat');
 
 % SVM training parameters
-kernel = 'gaussian';
+kernel = 'polynomial';
 kernel_scale = 'auto';
 % To use Quadratic Programming optimization (qp = 'L1QP')
 optimization = 'SMO';
