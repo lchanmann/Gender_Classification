@@ -1,0 +1,109 @@
+SVM parameters:
+	KernelFunction = polynomial
+	PolynomialOrder = 3
+	KernelScale = auto
+	Solver = SMO
+	BoxConstraint = 10.00
+	Cost = [  0.0  29.0  10.0  0.0  ]
+ 
+Train boosted SVM for fold-1...
+	Iteration 1: 
+		# of misclassified = 0 out of 8771
+		e = 0.00000
+		Elapsed time is 8.045268 seconds.
+ 
+
+confusion =
+
+        1564          95
+         132         401
+
+Aaccuracy =
+ 
+	 0.8964  
+ 
+Train boosted SVM for fold-2...
+	Iteration 1: 
+		# of misclassified = 0 out of 8770
+		e = 0.00000
+		Elapsed time is 8.087872 seconds.
+ 
+
+confusion =
+
+        1554         105
+         127         407
+
+Aaccuracy =
+ 
+	 0.8942  
+ 
+Train boosted SVM for fold-3...
+	Iteration 1: 
+		# of misclassified = 0 out of 8770
+		e = 0.00000
+		Elapsed time is 8.094473 seconds.
+ 
+
+confusion =
+
+        1546         113
+         123         411
+
+Aaccuracy =
+ 
+	 0.8924  
+ 
+Train boosted SVM for fold-4...
+	Iteration 1: 
+		# of misclassified = 0 out of 8770
+		e = 0.00000
+		Elapsed time is 7.651453 seconds.
+ 
+
+confusion =
+
+        1548         111
+         112         422
+
+Aaccuracy =
+ 
+	 0.8983  
+ 
+Train boosted SVM for fold-5...
+	Iteration 1: 
+		# of misclassified = 0 out of 8771
+		e = 0.00000
+		Elapsed time is 8.209602 seconds.
+ 
+
+confusion =
+
+        1548         111
+         142         391
+
+Aaccuracy =
+ 
+	 0.8846  
+ 
+5-Fold CV accuracy for boosted SVM = 0.89319
+accuracy =
+
+    0.8964
+    0.8942
+    0.8924
+    0.8983
+    0.8846
+
+Performance on testset:
+
+confusion =
+
+   275    12
+    66   209
+
+Aaccuracy =
+ 
+	 0.8612  
+ 
+ 
