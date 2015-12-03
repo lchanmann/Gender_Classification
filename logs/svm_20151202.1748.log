@@ -1,0 +1,483 @@
+SVM parameters:
+	KernelFunction = gaussian
+	KernelScale = auto
+	Solver = SMO
+	BoxConstraint = 10.00
+	Cost = [  0.0  29.0  10.0  0.0  ]
+ 
+Train boosted SVM for fold-1...
+	Iteration 1: 
+		# of misclassified = 2 out of 8771
+		e = 0.00023
+		Elapsed time is 5.429825 seconds.
+ 
+	Iteration 2: 
+		# of misclassified = 12 out of 8771
+		e = 0.00068
+		Elapsed time is 10.858837 seconds.
+ 
+	Iteration 3: 
+		# of misclassified = 20 out of 8771
+		e = 0.00057
+		Elapsed time is 15.838821 seconds.
+ 
+	Iteration 4: 
+		# of misclassified = 123 out of 8771
+		e = 0.00176
+		Elapsed time is 20.159796 seconds.
+ 
+	Iteration 5: 
+		# of misclassified = 211 out of 8771
+		e = 0.00151
+		Elapsed time is 24.483294 seconds.
+ 
+	Iteration 6: 
+		# of misclassified = 422 out of 8771
+		e = 0.00151
+		Elapsed time is 29.217855 seconds.
+ 
+	Iteration 7: 
+		# of misclassified = 1633 out of 8771
+		e = 0.00293
+		Elapsed time is 35.093504 seconds.
+ 
+	Iteration 8: 
+		# of misclassified = 411 out of 8771
+		e = 0.00037
+		Elapsed time is 41.082308 seconds.
+ 
+	Iteration 9: 
+		# of misclassified = 61 out of 8771
+		e = 0.00003
+		Elapsed time is 46.917596 seconds.
+ 
+	Iteration 10: 
+		# of misclassified = 11 out of 8771
+		e = 0.00000
+		Elapsed time is 52.699550 seconds.
+ 
+	Iteration 11: 
+		# of misclassified = 56 out of 8771
+		e = 0.00098
+		Elapsed time is 58.323630 seconds.
+ 
+	Iteration 12: 
+		# of misclassified = 149 out of 8771
+		e = 0.00242
+		Elapsed time is 63.707173 seconds.
+ 
+	Iteration 13: 
+		# of misclassified = 413 out of 8771
+		e = 0.00305
+		Elapsed time is 69.020055 seconds.
+ 
+	Iteration 14: 
+		# of misclassified = 840 out of 8771
+		e = 0.00349
+		Elapsed time is 74.410544 seconds.
+ 
+	Iteration 15: 
+		# of misclassified = 852 out of 8771
+		e = 0.00233
+		Elapsed time is 80.109051 seconds.
+ 
+	Iteration 16: 
+		# of misclassified = 780 out of 8771
+		e = 0.00164
+		Elapsed time is 86.123376 seconds.
+ 
+
+confusion =
+
+        1584          75
+         140         393
+
+Aaccuracy =
+ 
+	 0.9019  
+ 
+Train boosted SVM for fold-2...
+	Iteration 1: 
+		# of misclassified = 3 out of 8770
+		e = 0.00034
+		Elapsed time is 5.522289 seconds.
+ 
+	Iteration 2: 
+		# of misclassified = 10 out of 8770
+		e = 0.00057
+		Elapsed time is 10.958668 seconds.
+ 
+	Iteration 3: 
+		# of misclassified = 40 out of 8770
+		e = 0.00114
+		Elapsed time is 15.984212 seconds.
+ 
+	Iteration 4: 
+		# of misclassified = 95 out of 8770
+		e = 0.00136
+		Elapsed time is 20.650152 seconds.
+ 
+	Iteration 5: 
+		# of misclassified = 216 out of 8770
+		e = 0.00154
+		Elapsed time is 24.860563 seconds.
+ 
+	Iteration 6: 
+		# of misclassified = 457 out of 8770
+		e = 0.00164
+		Elapsed time is 29.518182 seconds.
+ 
+	Iteration 7: 
+		# of misclassified = 2026 out of 8770
+		e = 0.00363
+		Elapsed time is 35.482270 seconds.
+ 
+	Iteration 8: 
+		# of misclassified = 319 out of 8770
+		e = 0.00029
+		Elapsed time is 41.309774 seconds.
+ 
+	Iteration 9: 
+		# of misclassified = 63 out of 8770
+		e = 0.00003
+		Elapsed time is 47.150595 seconds.
+ 
+	Iteration 10: 
+		# of misclassified = 9 out of 8770
+		e = 0.00000
+		Elapsed time is 52.781298 seconds.
+ 
+	Iteration 11: 
+		# of misclassified = 73 out of 8770
+		e = 0.00136
+		Elapsed time is 58.473314 seconds.
+ 
+	Iteration 12: 
+		# of misclassified = 186 out of 8770
+		e = 0.00267
+		Elapsed time is 63.731947 seconds.
+ 
+	Iteration 13: 
+		# of misclassified = 436 out of 8770
+		e = 0.00336
+		Elapsed time is 68.828493 seconds.
+ 
+	Iteration 14: 
+		# of misclassified = 675 out of 8770
+		e = 0.00219
+		Elapsed time is 74.209816 seconds.
+ 
+	Iteration 15: 
+		# of misclassified = 865 out of 8770
+		e = 0.00235
+		Elapsed time is 79.641367 seconds.
+ 
+	Iteration 16: 
+		# of misclassified = 751 out of 8770
+		e = 0.00135
+		Elapsed time is 85.661869 seconds.
+ 
+
+confusion =
+
+        1586          73
+         133         401
+
+Aaccuracy =
+ 
+	 0.9061  
+ 
+Train boosted SVM for fold-3...
+	Iteration 1: 
+		# of misclassified = 1 out of 8770
+		e = 0.00011
+		Elapsed time is 5.160763 seconds.
+ 
+	Iteration 2: 
+		# of misclassified = 8 out of 8770
+		e = 0.00046
+		Elapsed time is 10.166972 seconds.
+ 
+	Iteration 3: 
+		# of misclassified = 27 out of 8770
+		e = 0.00077
+		Elapsed time is 15.022618 seconds.
+ 
+	Iteration 4: 
+		# of misclassified = 90 out of 8770
+		e = 0.00128
+		Elapsed time is 19.651396 seconds.
+ 
+	Iteration 5: 
+		# of misclassified = 232 out of 8770
+		e = 0.00166
+		Elapsed time is 23.771489 seconds.
+ 
+	Iteration 6: 
+		# of misclassified = 433 out of 8770
+		e = 0.00155
+		Elapsed time is 28.506703 seconds.
+ 
+	Iteration 7: 
+		# of misclassified = 1359 out of 8770
+		e = 0.00244
+		Elapsed time is 34.101111 seconds.
+ 
+	Iteration 8: 
+		# of misclassified = 374 out of 8770
+		e = 0.00034
+		Elapsed time is 39.914760 seconds.
+ 
+	Iteration 9: 
+		# of misclassified = 69 out of 8770
+		e = 0.00003
+		Elapsed time is 45.712690 seconds.
+ 
+	Iteration 10: 
+		# of misclassified = 18 out of 8770
+		e = 0.00000
+		Elapsed time is 51.625341 seconds.
+ 
+	Iteration 11: 
+		# of misclassified = 44 out of 8770
+		e = 0.00032
+		Elapsed time is 57.520004 seconds.
+ 
+	Iteration 12: 
+		# of misclassified = 99 out of 8770
+		e = 0.00087
+		Elapsed time is 63.065288 seconds.
+ 
+	Iteration 13: 
+		# of misclassified = 240 out of 8770
+		e = 0.00198
+		Elapsed time is 68.526887 seconds.
+ 
+	Iteration 14: 
+		# of misclassified = 606 out of 8770
+		e = 0.00306
+		Elapsed time is 73.663483 seconds.
+ 
+	Iteration 15: 
+		# of misclassified = 1317 out of 8770
+		e = 0.00290
+		Elapsed time is 79.214555 seconds.
+ 
+	Iteration 16: 
+		# of misclassified = 1095 out of 8770
+		e = 0.00187
+		Elapsed time is 85.124759 seconds.
+ 
+
+confusion =
+
+        1569          90
+         133         401
+
+Aaccuracy =
+ 
+	 0.8983  
+ 
+Train boosted SVM for fold-4...
+	Iteration 1: 
+		# of misclassified = 4 out of 8770
+		e = 0.00046
+		Elapsed time is 5.562071 seconds.
+ 
+	Iteration 2: 
+		# of misclassified = 9 out of 8770
+		e = 0.00051
+		Elapsed time is 10.869069 seconds.
+ 
+	Iteration 3: 
+		# of misclassified = 22 out of 8770
+		e = 0.00063
+		Elapsed time is 15.970461 seconds.
+ 
+	Iteration 4: 
+		# of misclassified = 71 out of 8770
+		e = 0.00101
+		Elapsed time is 20.624978 seconds.
+ 
+	Iteration 5: 
+		# of misclassified = 271 out of 8770
+		e = 0.00194
+		Elapsed time is 24.700657 seconds.
+ 
+	Iteration 6: 
+		# of misclassified = 470 out of 8770
+		e = 0.00168
+		Elapsed time is 29.334112 seconds.
+ 
+	Iteration 7: 
+		# of misclassified = 1947 out of 8770
+		e = 0.00349
+		Elapsed time is 35.121764 seconds.
+ 
+	Iteration 8: 
+		# of misclassified = 302 out of 8770
+		e = 0.00027
+		Elapsed time is 41.010272 seconds.
+ 
+	Iteration 9: 
+		# of misclassified = 46 out of 8770
+		e = 0.00002
+		Elapsed time is 46.958401 seconds.
+ 
+	Iteration 10: 
+		# of misclassified = 15 out of 8770
+		e = 0.00012
+		Elapsed time is 52.855219 seconds.
+ 
+	Iteration 11: 
+		# of misclassified = 63 out of 8770
+		e = 0.00097
+		Elapsed time is 58.436080 seconds.
+ 
+	Iteration 12: 
+		# of misclassified = 58 out of 8770
+		e = 0.00015
+		Elapsed time is 64.124864 seconds.
+ 
+	Iteration 13: 
+		# of misclassified = 398 out of 8770
+		e = 0.00311
+		Elapsed time is 69.300580 seconds.
+ 
+	Iteration 14: 
+		# of misclassified = 669 out of 8770
+		e = 0.00302
+		Elapsed time is 74.354128 seconds.
+ 
+	Iteration 15: 
+		# of misclassified = 1461 out of 8770
+		e = 0.00278
+		Elapsed time is 79.863389 seconds.
+ 
+	Iteration 16: 
+		# of misclassified = 569 out of 8770
+		e = 0.00119
+		Elapsed time is 85.837062 seconds.
+ 
+
+confusion =
+
+        1566          93
+         112         422
+
+Aaccuracy =
+ 
+	 0.9065  
+ 
+Train boosted SVM for fold-5...
+	Iteration 1: 
+		# of misclassified = 3 out of 8771
+		e = 0.00034
+		Elapsed time is 5.251192 seconds.
+ 
+	Iteration 2: 
+		# of misclassified = 13 out of 8771
+		e = 0.00074
+		Elapsed time is 10.649970 seconds.
+ 
+	Iteration 3: 
+		# of misclassified = 16 out of 8771
+		e = 0.00046
+		Elapsed time is 15.801193 seconds.
+ 
+	Iteration 4: 
+		# of misclassified = 92 out of 8771
+		e = 0.00131
+		Elapsed time is 20.415460 seconds.
+ 
+	Iteration 5: 
+		# of misclassified = 218 out of 8771
+		e = 0.00156
+		Elapsed time is 24.758816 seconds.
+ 
+	Iteration 6: 
+		# of misclassified = 481 out of 8771
+		e = 0.00172
+		Elapsed time is 29.474256 seconds.
+ 
+	Iteration 7: 
+		# of misclassified = 1888 out of 8771
+		e = 0.00338
+		Elapsed time is 35.348815 seconds.
+ 
+	Iteration 8: 
+		# of misclassified = 333 out of 8771
+		e = 0.00030
+		Elapsed time is 41.280362 seconds.
+ 
+	Iteration 9: 
+		# of misclassified = 42 out of 8771
+		e = 0.00002
+		Elapsed time is 47.304668 seconds.
+ 
+	Iteration 10: 
+		# of misclassified = 14 out of 8771
+		e = 0.00015
+		Elapsed time is 53.364534 seconds.
+ 
+	Iteration 11: 
+		# of misclassified = 20 out of 8771
+		e = 0.00019
+		Elapsed time is 59.117641 seconds.
+ 
+	Iteration 12: 
+		# of misclassified = 125 out of 8771
+		e = 0.00123
+		Elapsed time is 64.636301 seconds.
+ 
+	Iteration 13: 
+		# of misclassified = 253 out of 8771
+		e = 0.00166
+		Elapsed time is 69.870357 seconds.
+ 
+	Iteration 14: 
+		# of misclassified = 729 out of 8771
+		e = 0.00317
+		Elapsed time is 75.101818 seconds.
+ 
+	Iteration 15: 
+		# of misclassified = 1268 out of 8771
+		e = 0.00264
+		Elapsed time is 80.441060 seconds.
+ 
+	Iteration 16: 
+		# of misclassified = 1006 out of 8771
+		e = 0.00179
+		Elapsed time is 86.438972 seconds.
+ 
+
+confusion =
+
+        1572          87
+         128         405
+
+Aaccuracy =
+ 
+	 0.9019  
+ 
+5-Fold CV accuracy for boosted SVM = 0.90295
+accuracy =
+
+    0.9019
+    0.9061
+    0.8983
+    0.9065
+    0.9019
+
+Performance on testset:
+
+confusion =
+
+   278     9
+    64   211
+
+Aaccuracy =
+ 
+	 0.8701  
+ 
+ 

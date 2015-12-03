@@ -8,9 +8,6 @@ acc = sum(confusion([1 4])) / sum(confusion(:));
 if ~isempty(varargin) && sum(strcmpi('verbose', varargin(:))) > 0
     % print confusion and accuracy
     display(confusion);
-    display('Aaccuracy =');
-    disp(' ');
-    fprintf('\t %0.4f ', acc);
-    disp(' ');
+    fprintf('Aaccuracy =\t %0.4f\n', acc);
     disp(' ');
 end

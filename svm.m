@@ -27,16 +27,17 @@ polynomial_order = 3;
 % mis-classification
 C = 10;
 % mis-classification cost
-cost = [0 1; 1.5 0];
+cost = [0 10; 29 0];
 display('SVM parameters:');
 fprintf('\tKernelFunction = %s\n', kernel);
 if (strcmpi(kernel, 'polynomial'))
     fprintf('\tPolynomialOrder = %d\n', polynomial_order);
 end
-% fprintf('\tKernelScale = %s\n', num2str(kernel_scale));
+fprintf('\tKernelScale = %s\n', num2str(kernel_scale));
 fprintf('\tSolver = %s\n', optimization);
 fprintf('\tBoxConstraint = %0.2f\n', C);
-fprintf('\tCost = [ %s ]\n', sprintf(' %0.1f ', cost));
+fprintf('\tPrior = uniform\n');
+% fprintf('\tCost = [ %s ]\n', sprintf(' %0.1f ', cost));
 disp(' ');
 
 % % training and test set partition
@@ -47,11 +48,10 @@ k = 5;
 % CV = cvpartition(y_trainset, 'KFold', k);
 accuracy = zeros(k, 1);
 
-% boosting max iterations
-T = 16;
+% For reproducibility
+rng(1);
 
 models = cell(k, 1);
-% alpha_t = zeros(k, T);
 for j=1:k
     train_idx = CV.training(j);
     X_train = X_trainset(train_idx, :);
@@ -70,7 +70,8 @@ for j=1:k
             , 'BoxConstraint', C ...
             ...% , 'OutlierFraction', 0.01 ...
             ...% , 'Verbose', 1, 'NumPrint', 1000 ...
-            ...% , 'Cost', cost ...,
+            ...% , 'Cost', cost ...
+            , 'Prior', 'uniform' ...
         );    
     
     % measure boosted svm performance on validation set

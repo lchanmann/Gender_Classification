@@ -1,16 +1,21 @@
-function model = boosting( X_train, y_train, learner, T, varargin )
+function [model,total_misclassifieds] = boosting( X_train, y_train, learner, T, varargin )
 %BOOSTING perform classifier boosting for T iterations
-%
+% Inputs:
 %   X_train     - training predictors
 %   y_train     - training labels
 %   learner     - a weak learner to be boosted
 %   T           - the number of iterations to boost
-%
+% Outputs:
+%   model - a cell array containing the models that were trained in each
+%           iteration
+%   total_misclassifieds - the number of datapoints that were misclassified
+%                          in each iteration
 
     % output model
     model.T = T;
     model.Classifiers = cell(1, T);
     model.AlphaT = zeros(1, T);
+    total_misclassifieds = zeros(1, T);
 
     tic;
     N = length(y_train);
@@ -34,8 +39,9 @@ function model = boosting( X_train, y_train, learner, T, varargin )
         
         prediction = predict(classifier, X_train);
         misclassified = prediction ~= y_train;
+        total_misclassifieds(i) = sum(misclassified);
         
-        if sum(misclassified) == 0
+        if total_misclassifieds(i) == 0
             model.AlphaT(i) = 1;
             e = 0;
         else
@@ -43,7 +49,7 @@ function model = boosting( X_train, y_train, learner, T, varargin )
             model.AlphaT(i) = a;
         end
         
-        fprintf('\t\t# of misclassified = %d out of %d\n', sum(misclassified), N);
+        fprintf('\t\t# of misclassified = %d out of %d\n', total_misclassifieds(i), N);
         fprintf('\t\te = %0.5f\n', e);
         fprintf('\t\t');
         toc
