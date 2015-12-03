@@ -1,0 +1,30 @@
+_________________________________________________________
+                                                         
+       Classifier Accuracy without Boosting              
+_________________________________________________________
+ 
+
+confusion =
+
+   227    60
+    74   201
+
+Aaccuracy =
+ 
+	 0.7616  
+ 
+_________________________________________________________
+                                                         
+          Classifier Accuracy with Boosting              
+_________________________________________________________
+ 
+{Undefined function or variable 'neighbors'.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('naive_bayes', 'C:\Users\fthc8\Documents\GitHub\Gender_Classification\naive_bayes.m', 55)" style="font-weight:bold">naive_bayes</a> (<a href="matlab: opentoline('C:\Users\fthc8\Documents\GitHub\Gender_Classification\naive_bayes.m',55,0)">line 55</a>)
+    fprintf('Train boosted Naive Bayes for fold-%d...\n', neighbors, j);
+} 
+_________________________________________________________
+                                                         
+                Naive Base Classifier                    
+_________________________________________________________
+ 

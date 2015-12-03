@@ -17,6 +17,7 @@ y(y==2) = +1;
 load('train-test_split.mat');%use the same split for all experiments
 k = CV.NumTestSets;
 
+%% unboosted
 display('_________________________________________________________');
 display('                                                         ');
 display('       Classifier Accuracy without Boosting              ');
@@ -28,7 +29,7 @@ Hx_model.Classifiers = model.Trained;
 Hx_model.AlphaT = ones(1,k);
 performance(predict_Hx(Hx_model, X_testset), y_testset, 'Verbose');
 
-
+%% Boosting
 display('_________________________________________________________');
 display('                                                         ');
 display('          Classifier Accuracy with Boosting              ');
@@ -47,12 +48,12 @@ alpha_t = zeros(k, T);
 boosted_models = cell(k, 1);
 boosted_accuracy = zeros(k,1);
 for j=1:k
-    %train_idx = CV.training(j);
+    train_idx = CV.training(j);
     X_train = X_trainset(train_idx, :);
     y_train = y_trainset(train_idx, :);
     
     % boosting
-    fprintf('Train boosted Naive Bayes for fold-%d...\n', neighbors, j);
+    fprintf('Train boosted Naive Bayes for fold-%d...\n', j);
     boosted_models{j} = boosting(X_train, y_train, @fitcnb, T, ...
                                  'Prior','uniform');    
     
@@ -71,13 +72,14 @@ fprintf('%d-Fold CV accuracy for boosted Naive Bayes = %0.5f', k, mean(boosted_a
 display(boosted_accuracy);
 
 % classification accuracy on test set
-[N, ~] = size(test_X);
+[N, ~] = size(X_testset);
 prediction = zeros(N, k);
 for j=1:k
     prediction(:, j) = predict_Hx(boosted_models{j}, X_testset);
 end
 display('Performance on testset:');
-performance(sign(prediction*ones(k,1)), y_testset, 'Verbose');
+votes=prediction*ones(k,1); %sums each fold's models' votes
+performance(sign(votes), y_testset, 'Verbose');
 disp(' ');
 
 %%

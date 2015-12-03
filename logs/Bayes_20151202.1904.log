@@ -1,0 +1,524 @@
+_________________________________________________________
+                                                         
+       Classifier Accuracy without Boosting              
+_________________________________________________________
+ 
+
+confusion =
+
+   227    60
+    74   201
+
+Aaccuracy =
+ 
+	 0.7616  
+ 
+_________________________________________________________
+                                                         
+          Classifier Accuracy with Boosting              
+_________________________________________________________
+ 
+Train boosted Naive Bayes for fold-1...
+	Iteration 1: 
+		# of misclassified = 1987 out of 8771
+		e = 0.22654
+		Elapsed time is 8.544572 seconds.
+ 
+	Iteration 2: 
+		# of misclassified = 3699 out of 8771
+		e = 0.34024
+		Elapsed time is 17.069647 seconds.
+ 
+	Iteration 3: 
+		# of misclassified = 1780 out of 8771
+		e = 0.33965
+		Elapsed time is 25.537147 seconds.
+ 
+	Iteration 4: 
+		# of misclassified = 3618 out of 8771
+		e = 0.43091
+		Elapsed time is 33.928541 seconds.
+ 
+	Iteration 5: 
+		# of misclassified = 1808 out of 8771
+		e = 0.36406
+		Elapsed time is 42.405121 seconds.
+ 
+	Iteration 6: 
+		# of misclassified = 3513 out of 8771
+		e = 0.43769
+		Elapsed time is 50.804590 seconds.
+ 
+	Iteration 7: 
+		# of misclassified = 3431 out of 8771
+		e = 0.47505
+		Elapsed time is 59.331351 seconds.
+ 
+	Iteration 8: 
+		# of misclassified = 1928 out of 8771
+		e = 0.43940
+		Elapsed time is 68.155287 seconds.
+ 
+	Iteration 9: 
+		# of misclassified = 2570 out of 8771
+		e = 0.46808
+		Elapsed time is 76.778286 seconds.
+ 
+	Iteration 10: 
+		# of misclassified = 3710 out of 8771
+		e = 0.48207
+		Elapsed time is 85.467354 seconds.
+ 
+	Iteration 11: 
+		# of misclassified = 2734 out of 8771
+		e = 0.48515
+		Elapsed time is 94.042399 seconds.
+ 
+	Iteration 12: 
+		# of misclassified = 3404 out of 8771
+		e = 0.49320
+		Elapsed time is 102.553439 seconds.
+ 
+	Iteration 13: 
+		# of misclassified = 2183 out of 8771
+		e = 0.51704
+		Elapsed time is 111.145109 seconds.
+ 
+	Iteration 14: 
+		# of misclassified = 2932 out of 8771
+		e = 0.50707
+		Elapsed time is 119.694159 seconds.
+ 
+	Iteration 15: 
+		# of misclassified = 3502 out of 8771
+		e = 0.49681
+		Elapsed time is 128.144933 seconds.
+ 
+	Iteration 16: 
+		# of misclassified = 3285 out of 8771
+		e = 0.50860
+		Elapsed time is 136.632909 seconds.
+ 
+
+confusion =
+
+        1335         324
+         131         402
+
+Aaccuracy =
+ 
+	 0.7924  
+ 
+Train boosted Naive Bayes for fold-2...
+	Iteration 1: 
+		# of misclassified = 2017 out of 8770
+		e = 0.22999
+		Elapsed time is 8.551965 seconds.
+ 
+	Iteration 2: 
+		# of misclassified = 3693 out of 8770
+		e = 0.34176
+		Elapsed time is 17.043297 seconds.
+ 
+	Iteration 3: 
+		# of misclassified = 1836 out of 8770
+		e = 0.34338
+		Elapsed time is 25.608500 seconds.
+ 
+	Iteration 4: 
+		# of misclassified = 3610 out of 8770
+		e = 0.43578
+		Elapsed time is 34.309322 seconds.
+ 
+	Iteration 5: 
+		# of misclassified = 2056 out of 8770
+		e = 0.37388
+		Elapsed time is 43.228921 seconds.
+ 
+	Iteration 6: 
+		# of misclassified = 3630 out of 8770
+		e = 0.44201
+		Elapsed time is 51.874746 seconds.
+ 
+	Iteration 7: 
+		# of misclassified = 2141 out of 8770
+		e = 0.43430
+		Elapsed time is 60.524801 seconds.
+ 
+	Iteration 8: 
+		# of misclassified = 3444 out of 8770
+		e = 0.47121
+		Elapsed time is 68.963638 seconds.
+ 
+	Iteration 9: 
+		# of misclassified = 2700 out of 8770
+		e = 0.48478
+		Elapsed time is 77.432419 seconds.
+ 
+	Iteration 10: 
+		# of misclassified = 2348 out of 8770
+		e = 0.50003
+		Elapsed time is 85.884625 seconds.
+ 
+	Iteration 11: 
+		# of misclassified = 2349 out of 8770
+		e = 0.50001
+		Elapsed time is 94.376725 seconds.
+ 
+	Iteration 12: 
+		# of misclassified = 2349 out of 8770
+		e = 0.49996
+		Elapsed time is 103.182472 seconds.
+ 
+	Iteration 13: 
+		# of misclassified = 2344 out of 8770
+		e = 0.49977
+		Elapsed time is 111.996818 seconds.
+ 
+	Iteration 14: 
+		# of misclassified = 2322 out of 8770
+		e = 0.49886
+		Elapsed time is 120.517335 seconds.
+ 
+	Iteration 15: 
+		# of misclassified = 2226 out of 8770
+		e = 0.49065
+		Elapsed time is 129.192298 seconds.
+ 
+	Iteration 16: 
+		# of misclassified = 2097 out of 8770
+		e = 0.48363
+		Elapsed time is 137.733264 seconds.
+ 
+
+confusion =
+
+        1317         342
+         113         421
+
+Aaccuracy =
+ 
+	 0.7925  
+ 
+Train boosted Naive Bayes for fold-3...
+	Iteration 1: 
+		# of misclassified = 1990 out of 8770
+		e = 0.22691
+		Elapsed time is 8.415878 seconds.
+ 
+	Iteration 2: 
+		# of misclassified = 3715 out of 8770
+		e = 0.34213
+		Elapsed time is 16.844809 seconds.
+ 
+	Iteration 3: 
+		# of misclassified = 1671 out of 8770
+		e = 0.32803
+		Elapsed time is 25.290889 seconds.
+ 
+	Iteration 4: 
+		# of misclassified = 3615 out of 8770
+		e = 0.43126
+		Elapsed time is 33.760788 seconds.
+ 
+	Iteration 5: 
+		# of misclassified = 1677 out of 8770
+		e = 0.35820
+		Elapsed time is 42.283761 seconds.
+ 
+	Iteration 6: 
+		# of misclassified = 3520 out of 8770
+		e = 0.44715
+		Elapsed time is 50.792728 seconds.
+ 
+	Iteration 7: 
+		# of misclassified = 3476 out of 8770
+		e = 0.47120
+		Elapsed time is 59.223750 seconds.
+ 
+	Iteration 8: 
+		# of misclassified = 2390 out of 8770
+		e = 0.46821
+		Elapsed time is 67.661644 seconds.
+ 
+	Iteration 9: 
+		# of misclassified = 3261 out of 8770
+		e = 0.48424
+		Elapsed time is 76.068534 seconds.
+ 
+	Iteration 10: 
+		# of misclassified = 1919 out of 8770
+		e = 0.47477
+		Elapsed time is 84.494501 seconds.
+ 
+	Iteration 11: 
+		# of misclassified = 2248 out of 8770
+		e = 0.48126
+		Elapsed time is 92.906426 seconds.
+ 
+	Iteration 12: 
+		# of misclassified = 3157 out of 8770
+		e = 0.49635
+		Elapsed time is 101.353404 seconds.
+ 
+	Iteration 13: 
+		# of misclassified = 2571 out of 8770
+		e = 0.50977
+		Elapsed time is 109.854973 seconds.
+ 
+	Iteration 14: 
+		# of misclassified = 3465 out of 8770
+		e = 0.48257
+		Elapsed time is 118.348273 seconds.
+ 
+	Iteration 15: 
+		# of misclassified = 3193 out of 8770
+		e = 0.50004
+		Elapsed time is 126.928251 seconds.
+ 
+	Iteration 16: 
+		# of misclassified = 3195 out of 8770
+		e = 0.49976
+		Elapsed time is 135.478131 seconds.
+ 
+
+confusion =
+
+        1295         364
+         122         412
+
+Aaccuracy =
+ 
+	 0.7784  
+ 
+Train boosted Naive Bayes for fold-4...
+	Iteration 1: 
+		# of misclassified = 2006 out of 8770
+		e = 0.22873
+		Elapsed time is 8.434855 seconds.
+ 
+	Iteration 2: 
+		# of misclassified = 3675 out of 8770
+		e = 0.34407
+		Elapsed time is 16.976015 seconds.
+ 
+	Iteration 3: 
+		# of misclassified = 1827 out of 8770
+		e = 0.34763
+		Elapsed time is 25.592789 seconds.
+ 
+	Iteration 4: 
+		# of misclassified = 3501 out of 8770
+		e = 0.43029
+		Elapsed time is 34.195777 seconds.
+ 
+	Iteration 5: 
+		# of misclassified = 1553 out of 8770
+		e = 0.35754
+		Elapsed time is 42.795693 seconds.
+ 
+	Iteration 6: 
+		# of misclassified = 2462 out of 8770
+		e = 0.44052
+		Elapsed time is 51.240225 seconds.
+ 
+	Iteration 7: 
+		# of misclassified = 3148 out of 8770
+		e = 0.46982
+		Elapsed time is 59.697553 seconds.
+ 
+	Iteration 8: 
+		# of misclassified = 3494 out of 8770
+		e = 0.46836
+		Elapsed time is 68.072652 seconds.
+ 
+	Iteration 9: 
+		# of misclassified = 3752 out of 8770
+		e = 0.50357
+		Elapsed time is 76.489590 seconds.
+ 
+	Iteration 10: 
+		# of misclassified = 3855 out of 8770
+		e = 0.50395
+		Elapsed time is 84.844091 seconds.
+ 
+	Iteration 11: 
+		# of misclassified = 3926 out of 8770
+		e = 0.50196
+		Elapsed time is 93.292317 seconds.
+ 
+	Iteration 12: 
+		# of misclassified = 3959 out of 8770
+		e = 0.50055
+		Elapsed time is 101.636818 seconds.
+ 
+	Iteration 13: 
+		# of misclassified = 3962 out of 8770
+		e = 0.49928
+		Elapsed time is 109.928767 seconds.
+ 
+	Iteration 14: 
+		# of misclassified = 3957 out of 8770
+		e = 0.50072
+		Elapsed time is 118.261678 seconds.
+ 
+	Iteration 15: 
+		# of misclassified = 3962 out of 8770
+		e = 0.49928
+		Elapsed time is 126.606381 seconds.
+ 
+	Iteration 16: 
+		# of misclassified = 3956 out of 8770
+		e = 0.50066
+		Elapsed time is 134.972810 seconds.
+ 
+
+confusion =
+
+        1312         347
+          91         443
+
+Aaccuracy =
+ 
+	 0.8003  
+ 
+Train boosted Naive Bayes for fold-5...
+	Iteration 1: 
+		# of misclassified = 2018 out of 8771
+		e = 0.23008
+		Elapsed time is 8.372949 seconds.
+ 
+	Iteration 2: 
+		# of misclassified = 3685 out of 8771
+		e = 0.34025
+		Elapsed time is 16.780409 seconds.
+ 
+	Iteration 3: 
+		# of misclassified = 1818 out of 8771
+		e = 0.34525
+		Elapsed time is 25.174946 seconds.
+ 
+	Iteration 4: 
+		# of misclassified = 3554 out of 8771
+		e = 0.43264
+		Elapsed time is 33.619030 seconds.
+ 
+	Iteration 5: 
+		# of misclassified = 1673 out of 8771
+		e = 0.34824
+		Elapsed time is 42.270132 seconds.
+ 
+	Iteration 6: 
+		# of misclassified = 3604 out of 8771
+		e = 0.44497
+		Elapsed time is 50.643028 seconds.
+ 
+	Iteration 7: 
+		# of misclassified = 3535 out of 8771
+		e = 0.48134
+		Elapsed time is 58.987684 seconds.
+ 
+	Iteration 8: 
+		# of misclassified = 2347 out of 8771
+		e = 0.43396
+		Elapsed time is 67.328531 seconds.
+ 
+	Iteration 9: 
+		# of misclassified = 3575 out of 8771
+		e = 0.48754
+		Elapsed time is 75.690838 seconds.
+ 
+	Iteration 10: 
+		# of misclassified = 2586 out of 8771
+		e = 0.49025
+		Elapsed time is 84.002141 seconds.
+ 
+	Iteration 11: 
+		# of misclassified = 2406 out of 8771
+		e = 0.48129
+		Elapsed time is 92.280730 seconds.
+ 
+	Iteration 12: 
+		# of misclassified = 3329 out of 8771
+		e = 0.48859
+		Elapsed time is 100.602795 seconds.
+ 
+	Iteration 13: 
+		# of misclassified = 3523 out of 8771
+		e = 0.51598
+		Elapsed time is 108.925412 seconds.
+ 
+	Iteration 14: 
+		# of misclassified = 4060 out of 8771
+		e = 0.49621
+		Elapsed time is 117.272100 seconds.
+ 
+	Iteration 15: 
+		# of misclassified = 4004 out of 8771
+		e = 0.50577
+		Elapsed time is 125.584455 seconds.
+ 
+	Iteration 16: 
+		# of misclassified = 4077 out of 8771
+		e = 0.49345
+		Elapsed time is 134.098377 seconds.
+ 
+
+confusion =
+
+        1339         320
+         116         417
+
+Aaccuracy =
+ 
+	 0.8011  
+ 
+5-Fold CV accuracy for boosted Naive Bayes = 0.79294
+boosted_accuracy =
+
+    0.7924
+    0.7925
+    0.7784
+    0.8003
+    0.8011
+
+{Undefined function or variable 'test_X'.
+} 
+% K-Fold accuracy
+fprintf('%d-Fold CV accuracy for boosted Naive Bayes = %0.5f', k, mean(boosted_accuracy));
+5-Fold CV accuracy for boosted Naive Bayes = 0.79294display(boosted_accuracy);
+
+boosted_accuracy =
+
+    0.7924
+    0.7925
+    0.7784
+    0.8003
+    0.8011
+
+
+% classification accuracy on test set
+[N, ~] = size(X_testset);
+prediction = zeros(N, k);
+for j=1:k
+    prediction(:, j) = predict_Hx(boosted_models{j}, X_testset);
+end
+display('Performance on testset:');
+Performance on testset:
+votes=prediction*ones(k,1); %sums each fold's models' votes
+performance(sign(votes), y_testset, 'Verbose');
+
+confusion =
+
+   233    54
+    64   211
+
+Aaccuracy =
+ 
+	 0.7900  
+ 
+disp(' ');
+ 
+
+%%
+diary off
