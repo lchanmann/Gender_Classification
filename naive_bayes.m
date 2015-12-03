@@ -71,6 +71,12 @@ end
 fprintf('%d-Fold CV accuracy for boosted Naive Bayes = %0.5f', k, mean(boosted_accuracy));
 display(boosted_accuracy);
 
+figure
+surf(misclassifieds)
+title('Number of training set misclassifications by Naive Bayes')
+ylabel('Fold number')
+xlabel('Iteration of Adaboost')
+
 % classification accuracy on test set
 [N, ~] = size(X_testset);
 prediction = zeros(N, k);

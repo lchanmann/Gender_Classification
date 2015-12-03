@@ -151,4 +151,49 @@ In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('Exha
 In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ClassificationKNN/score', 'C:\Program Files\MATLAB\R2015a\toolbox\stats\classreg\ClassificationKNN.m', 425)" style="font-weight:bold">ClassificationKNN/score</a> (<a href="matlab: opentoline('C:\Program Files\MATLAB\R2015a\toolbox\stats\classreg\ClassificationKNN.m',425,0)">line 425</a>)
             [CIDX,dist] = knnsearch(this.NS, X,'k',this.ModelParams.NumNeighbors,...
 
-In <a href="matlab:matlab
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ClassificationKNN/predict', 'C:\Program Files\MATLAB\R2015a\toolbox\stats\classreg\ClassificationKNN.m', 696)" style="font-weight:bold">ClassificationKNN/predict</a> (<a href="matlab: opentoline('C:\Program Files\MATLAB\R2015a\toolbox\stats\classreg\ClassificationKNN.m',696,0)">line 696</a>)
+                 posteriors = score(this,X);
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('boosting', 'C:\Users\fthc8\Documents\GitHub\Gender_Classification\boosting.m', 35)" style="font-weight:bold">boosting</a> (<a href="matlab: opentoline('C:\Users\fthc8\Documents\GitHub\Gender_Classification\boosting.m',35,0)">line 35</a>)
+        prediction = predict(classifier, X_train);
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('optimize_KNN', 'C:\Users\fthc8\Documents\GitHub\Gender_Classification\optimize_KNN.m', 108)" style="font-weight:bold">optimize_KNN</a> (<a href="matlab: opentoline('C:\Users\fthc8\Documents\GitHub\Gender_Classification\optimize_KNN.m',108,0)">line 108</a>)
+    boosted_models{j} = boosting(X_train, y_train, @fitcknn, T, ...
+} 
+_________________________________________________________
+                                                         
+       Classifier Accuracy without Boosting              
+_________________________________________________________
+ 
+Search finished after 0 h, 2 min, 56.009962 sec
+
+best_male_accuracy =
+
+    0.8990
+
+
+neighbors =
+
+     1
+
+
+best_female_accuracy =
+
+    0.8618
+
+
+neighbors =
+
+     4
+
+
+best_global_accuracy =
+
+    0.7776
+
+
+neighbors =
+
+     9
+
+diary(['logs/KNN_' num2str(datestr(now,'yyyymmdd.HHMM')) '.log']);
