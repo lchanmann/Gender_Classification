@@ -18,14 +18,14 @@ diary(['logs/svm_' num2str(datestr(now,'yyyymmdd.HHMM')) '.log']);
 load('train-test_split.mat');
 
 % SVM training parameters
-kernel = 'polynomial';
+kernel = 'gaussian';
 kernel_scale = 'auto';
 % To use Quadratic Programming optimization (qp = 'L1QP')
 optimization = 'SMO';
 polynomial_order = 3;
 % set upper-bound on \alpha. If C=Inf then svm don't allow
 % mis-classification
-C = 50;
+C = 1;
 % mis-classification cost
 cost = [0 10; 29 0];
 display('SVM parameters:');
@@ -93,12 +93,16 @@ display(accuracy);
 
 % classification accuracy on test set
 [N, ~] = size(X_testset);
-prediction = zeros(N, k);
-for j=1:k
-    prediction(:, j) = predict_Hx(models{j}, X_testset);
-end
 display('Performance on testset:');
-performance(sign(prediction*ones(k,1)), y_testset, 'Verbose');
-disp(' ');
+
+for t=1:T
+    prediction = zeros(N, k);
+    for j=1:k
+        prediction(:, j) = predict_Hx(models{j}, X_testset, t);
+    end
+    fprintf('t = %d', t);
+    performance(sign(prediction*ones(k,1)), y_testset, 'Verbose');
+    disp(' ');
+end
 
 diary off;
