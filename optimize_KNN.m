@@ -55,7 +55,7 @@ for i=1:n
     male_accuracy(i) = confusion(1,1)/sum(y_testset == -1);
     female_accuracy(i) = confusion(2,2)/sum(y_testset == 1);
 end
-close(h)
+delete(h)
 t=toc;
 fprintf('Search finished after %d h, %d min, %f sec\n',floor(t/60^2),floor(t/60),rem(t,60));
 
@@ -106,12 +106,13 @@ for j=1:k
     y_train = y_trainset(train_idx, :);
     
     % boosting
+    waitbar((2*j-1)/(2*k),h,sprintf('Boosting %d-NN fold %d of %d',neighbors,j,k));
     fprintf('Train boosted %d-NN for fold-%d...\n', neighbors, j);
     [boosted_models{j}, misclassifieds(j,:)] = ...
                             boosting(X_train, y_train, @fitcknn, T, ...
                             'NumNeighbors', neighbors,'Prior','uniform');    
     
-    waitbar(j/k,h,sprintf('Crossvalidating boosted %d-NN fold %d of %d',neighbors,j,k));
+    waitbar((2*j)/(2*k),h,sprintf('Crossvalidating boosted %d-NN fold %d of %d',neighbors,j,k));
     % measure boosted svm performance on validation set
     test_idx = CV.test(j);
     X_test = X_trainset(test_idx, :);
@@ -121,6 +122,7 @@ for j=1:k
     Hx = predict_Hx(boosted_models{j}, X_test);
     boosted_accuracy(j) = performance(Hx, y_test, 'Verbose');
 end
+delete(h)
 
 % K-Fold accuracy
 fprintf('%d-Fold CV accuracy for boosted %d-NN = %0.5f', k, neighbors, mean(boosted_accuracy));
@@ -129,8 +131,11 @@ display(boosted_accuracy);
 figure
 surf(misclassifieds)
 title(sprintf('Number of training set misclassifications by boosted learners (%d-NN)',neighbors))
+set(gca,'Zdir','reverse')
 ylabel('Fold number')
 xlabel('Iteration of Adaboost')
+set(gca,'Ydir','reverse')
+set(gca,'Xdir','reverse')
 
 
 
@@ -140,10 +145,24 @@ prediction = zeros(N, k);
 for j=1:k
     prediction(:, j) = predict_Hx(boosted_models{j}, X_testset);
 end
+
+%%
 display('Performance on testset:');
-votes=prediction*ones(k,1); %sums each fold's models' votes
-performance(sign(votes), y_testset, 'Verbose');
-disp(' ');
+
+accTest = zeros(1, T);
+for t=1:T
+    prediction = zeros(N, k);
+    for j=1:k
+        prediction(:, j) = predict_Hx(boosted_models{j}, X_testset, t);
+    end
+    fprintf('t = %d', t);
+    votes=prediction*ones(k,1); %sums each fold's models' votes
+    accTest(t) = performance(sign(votes), y_testset, 'Verbose');
+    disp(' ');
+end
+plot(accTest)
+title(sprintf('Accuracy of %d-Nearest Neighbor classifiers',neighbors))
+xlabel('Number of Boosting Rounds in classifier')
 
 %% End
 diary off;
