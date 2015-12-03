@@ -18,7 +18,7 @@ diary(['logs/svm_' num2str(datestr(now,'yyyymmdd.HHMM')) '.log']);
 load('train-test_split.mat');
 
 % SVM training parameters
-kernel = 'gaussian';
+kernel = 'linear';
 kernel_scale = 'auto';
 % To use Quadratic Programming optimization (qp = 'L1QP')
 optimization = 'SMO';
@@ -49,7 +49,7 @@ k = 5;
 accuracy = zeros(k, 1);
 
 % boosting max iterations
-T = 6;
+T = 16;
 
 % For reproducibility
 rng(1);
@@ -95,13 +95,14 @@ display(accuracy);
 [N, ~] = size(X_testset);
 display('Performance on testset:');
 
+accTest = zeros(1, T);
 for t=1:T
     prediction = zeros(N, k);
     for j=1:k
         prediction(:, j) = predict_Hx(models{j}, X_testset, t);
     end
     fprintf('t = %d', t);
-    performance(sign(prediction*ones(k,1)), y_testset, 'Verbose');
+    accTest(t) = performance(sign(prediction*ones(k,1)), y_testset, 'Verbose');
     disp(' ');
 end
 
