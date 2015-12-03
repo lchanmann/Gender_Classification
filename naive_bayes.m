@@ -89,10 +89,23 @@ prediction = zeros(N, k);
 for j=1:k
     prediction(:, j) = predict_Hx(boosted_models{j}, X_testset);
 end
+
+%%
 display('Performance on testset:');
-votes=prediction*ones(k,1); %sums each fold's models' votes
-performance(sign(votes), y_testset, 'Verbose');
-disp(' ');
+accTest = zeros(1, T);
+for t=1:T
+    prediction = zeros(N, k);
+    for j=1:k
+        prediction(:, j) = predict_Hx(boosted_models{j}, X_testset, t);
+    end
+    fprintf('t = %d', t);
+    votes=prediction*ones(k,1); %sums each fold's models' votes
+    accTest(t) = performance(sign(votes), y_testset, 'Verbose');
+    disp(' ');
+end
+plot(accTest)
+title('Accuracy of Boosted Naive Bayes classifiers')
+xlabel('Number of Boosting Rounds in classifier')
 
 %%
 diary off
