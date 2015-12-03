@@ -1,0 +1,154 @@
+_________________________________________________________
+                                                         
+       Classifier Accuracy without Boosting              
+_________________________________________________________
+ 
+Search finished after 0 h, 2 min, 54.872218 sec
+
+best_male_accuracy =
+
+    0.8990
+
+
+neighbors =
+
+     1
+
+
+best_female_accuracy =
+
+    0.9382
+
+
+neighbors =
+
+     1
+
+
+best_global_accuracy =
+
+    0.7776
+
+
+neighbors =
+
+     9
+
+_________________________________________________________
+                                                         
+          Classifier Accuracy with Boosting              
+_________________________________________________________
+ 
+Train boosted 9-NN for fold-1...
+	Iteration 1: 
+		# of misclassified = 1490 out of 8771
+		e = 0.16988
+		Elapsed time is 4.998228 seconds.
+ 
+	Iteration 2: 
+		# of misclassified = 1889 out of 8771
+		e = 0.24422
+		Elapsed time is 9.961317 seconds.
+ 
+	Iteration 3: 
+		# of misclassified = 2118 out of 8771
+		e = 0.45350
+		Elapsed time is 14.891875 seconds.
+ 
+	Iteration 4: 
+		# of misclassified = 2111 out of 8771
+		e = 0.49100
+		Elapsed time is 19.837554 seconds.
+ 
+	Iteration 5: 
+		# of misclassified = 2120 out of 8771
+		e = 0.50192
+		Elapsed time is 24.832949 seconds.
+ 
+	Iteration 6: 
+		# of misclassified = 2120 out of 8771
+		e = 0.50003
+		Elapsed time is 29.879509 seconds.
+ 
+	Iteration 7: 
+		# of misclassified = 2120 out of 8771
+		e = 0.50000
+		Elapsed time is 35.012813 seconds.
+ 
+	Iteration 8: 
+		# of misclassified = 2120 out of 8771
+		e = 0.50000
+		Elapsed time is 40.108245 seconds.
+ 
+	Iteration 9: 
+		# of misclassified = 2120 out of 8771
+		e = 0.50000
+		Elapsed time is 45.151545 seconds.
+ 
+	Iteration 10: 
+		# of misclassified = 2120 out of 8771
+		e = 0.50000
+		Elapsed time is 50.118765 seconds.
+ 
+	Iteration 11: 
+		# of misclassified = 2120 out of 8771
+		e = 0.50000
+		Elapsed time is 55.122002 seconds.
+ 
+	Iteration 12: 
+		# of misclassified = 2120 out of 8771
+		e = 0.50000
+		Elapsed time is 60.110835 seconds.
+ 
+	Iteration 13: 
+		# of misclassified = 2120 out of 8771
+		e = 0.50000
+		Elapsed time is 65.095789 seconds.
+ 
+	Iteration 14: 
+		# of misclassified = 2120 out of 8771
+		e = 0.50000
+		Elapsed time is 70.061685 seconds.
+ 
+	Iteration 15: 
+		# of misclassified = 2120 out of 8771
+		e = 0.50000
+		Elapsed time is 75.071238 seconds.
+ 
+	Iteration 16: 
+		# of misclassified = 2120 out of 8771
+		e = 0.50000
+		Elapsed time is 80.063398 seconds.
+ 
+
+confusion =
+
+        1346         313
+         164         369
+
+Aaccuracy =
+ 
+	 0.7824  
+ 
+Train boosted 9-NN for fold-2...
+	Iteration 1: 
+		# of misclassified = 1535 out of 8770
+		e = 0.17503
+		Elapsed time is 4.982255 seconds.
+ 
+	Iteration 2: 
+		# of misclassified = 1909 out of 8770
+		e = 0.25536
+		Elapsed time is 9.972193 seconds.
+ 
+	Iteration 3: 
+{Operation terminated by user during <a href="matlab:matlab.internal.language.introspective.errorDocCallback('pdist2', 'C:\Program Files\MATLAB\R2015a\toolbox\stats\stats\pdist2.m', 345)" style="font-weight:bold">pdist2</a> (<a href="matlab: opentoline('C:\Program Files\MATLAB\R2015a\toolbox\stats\stats\pdist2.m',345,0)">line 345</a>)
+
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ExhaustiveSearcher/knnsearch', 'C:\Program Files\MATLAB\R2015a\toolbox\stats\stats\@ExhaustiveSearcher\knnsearch.m', 207)" style="font-weight:bold">ExhaustiveSearcher/knnsearch</a> (<a href="matlab: opentoline('C:\Program Files\MATLAB\R2015a\toolbox\stats\stats\@ExhaustiveSearcher\knnsearch.m',207,0)">line 207</a>)
+       [dist,idx] = pdist2(obj.X,Y, distMetric, arg{:}, 'smallest',numNN);
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ClassificationKNN/score', 'C:\Program Files\MATLAB\R2015a\toolbox\stats\classreg\ClassificationKNN.m', 425)" style="font-weight:bold">ClassificationKNN/score</a> (<a href="matlab: opentoline('C:\Program Files\MATLAB\R2015a\toolbox\stats\classreg\ClassificationKNN.m',425,0)">line 425</a>)
+            [CIDX,dist] = knnsearch(this.NS, X,'k',this.ModelParams.NumNeighbors,...
+
+In <a href="matlab:matlab

@@ -45,10 +45,15 @@ for i=1:n
     Hx_model.AlphaT = ones(1,k);
     Hx_model.Classifiers = model.Trained;
     
+    %{
     noboost_accuracy = gender_accuracy(predict_Hx(Hx_model, X_testset), y_testset,-1,1);
     male_accuracy(i) = noboost_accuracy.males;
     female_accuracy(i) = noboost_accuracy.females;
     accuracy(i) = noboost_accuracy.global;
+    %}
+    [accuracy(i), confusion] = performance(predict_Hx(Hx_model, X_testset),y_testset);
+    male_accuracy(i) = confusion(1,1)/sum(y_testset == -1);
+    female_accuracy(i) = confusion(2,2)/sum(y_testset == 1);
 end
 close(h)
 t=toc;
@@ -94,7 +99,7 @@ alpha_t = zeros(k, T);
 boosted_models = cell(k, 1);
 boosted_accuracy = zeros(k,1);
 for j=1:k
-    %train_idx = CV.training(j);
+    train_idx = CV.training(j);
     X_train = X_trainset(train_idx, :);
     y_train = y_trainset(train_idx, :);
     
@@ -124,7 +129,8 @@ for j=1:k
     prediction(:, j) = predict_Hx(boosted_models{j}, X_testset);
 end
 display('Performance on testset:');
-performance(sign(prediction*ones(k,1)), y_testset, 'Verbose');
+votes=prediction*ones(k,1); %sums each fold's models' votes
+performance(sign(votes), y_testset, 'Verbose');
 disp(' ');
 
 %% End
