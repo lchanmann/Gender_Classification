@@ -36,7 +36,8 @@ end
 fprintf('\tKernelScale = %s\n', num2str(kernel_scale));
 fprintf('\tSolver = %s\n', optimization);
 fprintf('\tBoxConstraint = %0.2f\n', C);
-fprintf('\tCost = [ %s ]\n', sprintf(' %0.1f ', cost));
+fprintf('\tPrior = uniform\n');
+% fprintf('\tCost = [ %s ]\n', sprintf(' %0.1f ', cost));
 disp(' ');
 
 % % training and test set partition
@@ -46,6 +47,9 @@ disp(' ');
 k = 5;
 % CV = cvpartition(y_trainset, 'KFold', k);
 accuracy = zeros(k, 1);
+
+% For reproducibility
+rng(1);
 
 models = cell(k, 1);
 for j=1:k
@@ -66,7 +70,8 @@ for j=1:k
             , 'BoxConstraint', C ...
             ...% , 'OutlierFraction', 0.01 ...
             ...% , 'Verbose', 1, 'NumPrint', 1000 ...
-            , 'Cost', cost ...,
+            ...% , 'Cost', cost ...
+            , 'Prior', 'uniform' ...
         );    
     
     % measure boosted svm performance on validation set
