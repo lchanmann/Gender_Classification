@@ -1,0 +1,376 @@
+SVM parameters:
+	KernelFunction = gaussian
+	KernelScale = auto
+	Solver = SMO
+	BoxConstraint = 102.00
+	Prior = uniform
+ 
+Train boosted SVM for fold-1...
+	Iteration 1: 
+		# of misclassified = 0 out of 8771
+		e = 0.00000
+		Elapsed time is 5.909973 seconds.
+ 
+
+confusion =
+
+        1590          69
+         149         384
+
+Aaccuracy =	 0.9005
+ 
+Train boosted SVM for fold-2...
+	Iteration 1: 
+		# of misclassified = 0 out of 8770
+		e = 0.00000
+		Elapsed time is 5.739894 seconds.
+ 
+
+confusion =
+
+        1601          58
+         140         394
+
+Aaccuracy =	 0.9097
+ 
+Train boosted SVM for fold-3...
+	Iteration 1: 
+		# of misclassified = 0 out of 8770
+		e = 0.00000
+		Elapsed time is 5.252533 seconds.
+ 
+
+confusion =
+
+        1579          80
+         139         395
+
+Aaccuracy =	 0.9001
+ 
+Train boosted SVM for fold-4...
+	Iteration 1: 
+		# of misclassified = 0 out of 8770
+		e = 0.00000
+		Elapsed time is 5.922780 seconds.
+ 
+
+confusion =
+
+        1572          87
+         120         414
+
+Aaccuracy =	 0.9056
+ 
+Train boosted SVM for fold-5...
+	Iteration 1: 
+		# of misclassified = 0 out of 8771
+		e = 0.00000
+		Elapsed time is 5.977107 seconds.
+ 
+
+confusion =
+
+        1589          70
+         139         394
+
+Aaccuracy =	 0.9047
+ 
+5-Fold CV accuracy for boosted SVM = 0.90413
+accuracy =
+
+    0.9005
+    0.9097
+    0.9001
+    0.9056
+    0.9047
+
+Performance on training set:
+t = 1
+confusion =
+
+        8295           0
+           0        2668
+
+Aaccuracy =	 1.0000
+ 
+ 
+t = 2
+confusion =
+
+        8295           0
+           0        2668
+
+Aaccuracy =	 1.0000
+ 
+ 
+t = 3
+confusion =
+
+        8295           0
+           0        2668
+
+Aaccuracy =	 1.0000
+ 
+ 
+t = 4
+confusion =
+
+        8295           0
+           0        2668
+
+Aaccuracy =	 1.0000
+ 
+ 
+t = 5
+confusion =
+
+        8295           0
+           0        2668
+
+Aaccuracy =	 1.0000
+ 
+ 
+t = 6
+confusion =
+
+        8295           0
+           0        2668
+
+Aaccuracy =	 1.0000
+ 
+ 
+t = 7
+confusion =
+
+        8295           0
+           0        2668
+
+Aaccuracy =	 1.0000
+ 
+ 
+t = 8
+confusion =
+
+        8295           0
+           0        2668
+
+Aaccuracy =	 1.0000
+ 
+ 
+t = 9
+confusion =
+
+        8295           0
+           0        2668
+
+Aaccuracy =	 1.0000
+ 
+ 
+t = 10
+confusion =
+
+        8295           0
+           0        2668
+
+Aaccuracy =	 1.0000
+ 
+ 
+t = 11
+confusion =
+
+        8295           0
+           0        2668
+
+Aaccuracy =	 1.0000
+ 
+ 
+t = 12
+confusion =
+
+        8295           0
+           0        2668
+
+Aaccuracy =	 1.0000
+ 
+ 
+t = 13
+confusion =
+
+        8295           0
+           0        2668
+
+Aaccuracy =	 1.0000
+ 
+ 
+t = 14
+confusion =
+
+        8295           0
+           0        2668
+
+Aaccuracy =	 1.0000
+ 
+ 
+t = 15
+confusion =
+
+        8295           0
+           0        2668
+
+Aaccuracy =	 1.0000
+ 
+ 
+t = 16
+confusion =
+
+        8295           0
+           0        2668
+
+Aaccuracy =	 1.0000
+ 
+ 
+Performance on testset:
+t = 1
+confusion =
+
+   280     7
+    68   207
+
+Aaccuracy =	 0.8665
+ 
+ 
+t = 2
+confusion =
+
+   280     7
+    68   207
+
+Aaccuracy =	 0.8665
+ 
+ 
+t = 3
+confusion =
+
+   280     7
+    68   207
+
+Aaccuracy =	 0.8665
+ 
+ 
+t = 4
+confusion =
+
+   280     7
+    68   207
+
+Aaccuracy =	 0.8665
+ 
+ 
+t = 5
+confusion =
+
+   280     7
+    68   207
+
+Aaccuracy =	 0.8665
+ 
+ 
+t = 6
+confusion =
+
+   280     7
+    68   207
+
+Aaccuracy =	 0.8665
+ 
+ 
+t = 7
+confusion =
+
+   280     7
+    68   207
+
+Aaccuracy =	 0.8665
+ 
+ 
+t = 8
+confusion =
+
+   280     7
+    68   207
+
+Aaccuracy =	 0.8665
+ 
+ 
+t = 9
+confusion =
+
+   280     7
+    68   207
+
+Aaccuracy =	 0.8665
+ 
+ 
+t = 10
+confusion =
+
+   280     7
+    68   207
+
+Aaccuracy =	 0.8665
+ 
+ 
+t = 11
+confusion =
+
+   280     7
+    68   207
+
+Aaccuracy =	 0.8665
+ 
+ 
+t = 12
+confusion =
+
+   280     7
+    68   207
+
+Aaccuracy =	 0.8665
+ 
+ 
+t = 13
+confusion =
+
+   280     7
+    68   207
+
+Aaccuracy =	 0.8665
+ 
+ 
+t = 14
+confusion =
+
+   280     7
+    68   207
+
+Aaccuracy =	 0.8665
+ 
+ 
+t = 15
+confusion =
+
+   280     7
+    68   207
+
+Aaccuracy =	 0.8665
+ 
+ 
+t = 16
+confusion =
+
+   280     7
+    68   207
+
+Aaccuracy =	 0.8665
+ 
+ 
