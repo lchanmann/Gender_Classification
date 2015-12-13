@@ -1,0 +1,72 @@
+SVM parameters:
+	KernelFunction = polynomial
+	PolynomialOrder = 3
+	KernelScale = auto
+	Solver = SMO
+	BoxConstraint = 50.00
+	Prior = uniform
+ 
+Train SVM (non-boosted) for fold-1...
+
+confusion =
+
+        1564          95
+         132         401
+
+Aaccuracy =	 0.8964
+ 
+Train SVM (non-boosted) for fold-2...
+
+confusion =
+
+        1554         105
+         127         407
+
+Aaccuracy =	 0.8942
+ 
+Train SVM (non-boosted) for fold-3...
+
+confusion =
+
+        1547         112
+         123         411
+
+Aaccuracy =	 0.8928
+ 
+Train SVM (non-boosted) for fold-4...
+
+confusion =
+
+        1549         110
+         113         421
+
+Aaccuracy =	 0.8983
+ 
+Train SVM (non-boosted) for fold-5...
+
+confusion =
+
+        1548         111
+         142         391
+
+Aaccuracy =	 0.8846
+ 
+5-Fold CV accuracy for SVM = 0.89328
+accuracy =
+
+    0.8964
+    0.8942
+    0.8928
+    0.8983
+    0.8846
+
+Performance on testset:
+
+confusion =
+
+   274    13
+    66   209
+
+Aaccuracy =	 0.8594
+ 
+ 

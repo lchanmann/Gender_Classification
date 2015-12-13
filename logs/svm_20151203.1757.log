@@ -1,0 +1,172 @@
+SVM parameters:
+	KernelFunction = gaussian
+	KernelScale = auto
+	Solver = SMO
+	BoxConstraint = 1.00
+	Prior = uniform
+ 
+Train boosted SVM for fold-1...
+	Iteration 1: 
+		# of misclassified = 295 out of 8771
+		e = 0.03363
+		Elapsed time is 4.003600 seconds.
+ 
+	Iteration 2: 
+		# of misclassified = 224 out of 8771
+		e = 0.01321
+		Elapsed time is 8.656035 seconds.
+ 
+	Iteration 3: 
+		# of misclassified = 589 out of 8771
+		e = 0.01761
+		Elapsed time is 13.375586 seconds.
+ 
+	Iteration 4: 
+		# of misclassified = 842 out of 8771
+		e = 0.02167
+		Elapsed time is 18.905782 seconds.
+ 
+	Iteration 5: 
+		# of misclassified = 344 out of 8771
+		e = 0.01466
+		Elapsed time is 24.489133 seconds.
+ 
+	Iteration 6: 
+		# of misclassified = 434 out of 8771
+		e = 0.02634
+		Elapsed time is 29.986594 seconds.
+ 
+	Iteration 7: 
+		# of misclassified = 1043 out of 8771
+		e = 0.05571
+		Elapsed time is 35.306360 seconds.
+ 
+	Iteration 8: 
+		# of misclassified = 1469 out of 8771
+		e = 0.02663
+		Elapsed time is 40.957884 seconds.
+ 
+	Iteration 9: 
+		# of misclassified = 2107 out of 8771
+		e = 0.02834
+		Elapsed time is 46.860641 seconds.
+ 
+	Iteration 10: 
+		# of misclassified = 441 out of 8771
+		e = 0.02906
+		Elapsed time is 52.325236 seconds.
+ 
+	Iteration 11: 
+		# of misclassified = 537 out of 8771
+		e = 0.03287
+		Elapsed time is 57.797704 seconds.
+ 
+	Iteration 12: 
+		# of misclassified = 1670 out of 8771
+		e = 0.04132
+		Elapsed time is 63.642207 seconds.
+ 
+	Iteration 13: 
+		# of misclassified = 814 out of 8771
+		e = 0.02550
+		Elapsed time is 69.044129 seconds.
+ 
+	Iteration 14: 
+		# of misclassified = 1074 out of 8771
+		e = 0.02278
+		Elapsed time is 74.880963 seconds.
+ 
+	Iteration 15: 
+		# of misclassified = 784 out of 8771
+		e = 0.03949
+		Elapsed time is 80.313534 seconds.
+ 
+	Iteration 16: 
+		# of misclassified = 476 out of 8771
+		e = 0.05425
+		Elapsed time is 85.126525 seconds.
+ 
+	Iteration 17: 
+		# of misclassified = 607 out of 8771
+		e = 0.04776
+		Elapsed time is 90.385329 seconds.
+ 
+	Iteration 18: 
+		# of misclassified = 427 out of 8771
+		e = 0.01689
+		Elapsed time is 96.089772 seconds.
+ 
+	Iteration 19: 
+		# of misclassified = 1979 out of 8771
+		e = 0.03677
+		Elapsed time is 101.943390 seconds.
+ 
+	Iteration 20: 
+		# of misclassified = 1073 out of 8771
+		e = 0.04256
+		Elapsed time is 107.530027 seconds.
+ 
+	Iteration 21: 
+		# of misclassified = 765 out of 8771
+		e = 0.06154
+		Elapsed time is 112.810219 seconds.
+ 
+	Iteration 22: 
+		# of misclassified = 489 out of 8771
+		e = 0.02333
+		Elapsed time is 118.326509 seconds.
+ 
+	Iteration 23: 
+		# of misclassified = 699 out of 8771
+		e = 0.01824
+		Elapsed time is 123.981112 seconds.
+ 
+	Iteration 24: 
+		# of misclassified = 2155 out of 8771
+		e = 0.03997
+		Elapsed time is 129.743839 seconds.
+ 
+	Iteration 25: 
+		# of misclassified = 888 out of 8771
+		e = 0.06025
+		Elapsed time is 134.994950 seconds.
+ 
+	Iteration 26: 
+		# of misclassified = 746 out of 8771
+		e = 0.03093
+		Elapsed time is 140.971830 seconds.
+ 
+	Iteration 27: 
+		# of misclassified = 554 out of 8771
+		e = 0.02813
+		Elapsed time is 146.672809 seconds.
+ 
+	Iteration 28: 
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('classreg.learning.impl.SVMImpl.make', 'C:\Program Files\MATLAB\R2015a\toolbox\stats\classreg\+classreg\+learning\+impl\SVMImpl.m', 412)" style="font-weight:bold">classreg.learning.impl.SVMImpl.make</a> (<a href="matlab: opentoline('C:\Program Files\MATLAB\R2015a\toolbox\stats\classreg\+classreg\+learning\+impl\SVMImpl.m',412,0)">line 412</a>)
+Box constraint for observation 6643 is too small: 1.036525e-08
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ClassificationSVM', 'C:\Program Files\MATLAB\R2015a\toolbox\stats\classreg\ClassificationSVM.m', 319)" style="font-weight:bold">ClassificationSVM</a> (<a href="matlab: opentoline('C:\Program Files\MATLAB\R2015a\toolbox\stats\classreg\ClassificationSVM.m',319,0)">line 319</a>)
+            this.Impl = classreg.learning.impl.SVMImpl.make(...
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('classreg.learning.FitTemplate/fit', 'C:\Program Files\MATLAB\R2015a\toolbox\stats\classreg\+classreg\+learning\FitTemplate.m', 251)" style="font-weight:bold">classreg.learning.FitTemplate/fit</a> (<a href="matlab: opentoline('C:\Program Files\MATLAB\R2015a\toolbox\stats\classreg\+classreg\+learning\FitTemplate.m',251,0)">line 251</a>)
+            obj = this.MakeFitObject(X,Y,W,this.ModelParams,fitArgs{:});
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ClassificationSVM.fit', 'C:\Program Files\MATLAB\R2015a\toolbox\stats\classreg\ClassificationSVM.m', 237)" style="font-weight:bold">ClassificationSVM.fit</a> (<a href="matlab: opentoline('C:\Program Files\MATLAB\R2015a\toolbox\stats\classreg\ClassificationSVM.m',237,0)">line 237</a>)
+            this = fit(temp,X,Y);
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('fitcsvm', 'C:\Program Files\MATLAB\R2015a\toolbox\stats\classreg\fitcsvm.m', 279)" style="font-weight:bold">fitcsvm</a> (<a href="matlab: opentoline('C:\Program Files\MATLAB\R2015a\toolbox\stats\classreg\fitcsvm.m',279,0)">line 279</a>)
+obj = ClassificationSVM.fit(X,Y,varargin{:});
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('boosting', 'C:\Users\cl9p8\Desktop\Gender_Classification\boosting.m', 34)" style="font-weight:bold">boosting</a> (<a href="matlab: opentoline('C:\Users\cl9p8\Desktop\Gender_Classification\boosting.m',34,0)">line 34</a>)
+        classifier = learner(X_train, y_train ...
+} 
+x_i = X_train(6643,:);
+x_i = x_i';
+W
+{Undefined function or variable 'W'.
+} 
+_________________________________________________________
+                                                         
+                    SVM Classifier                       
+_________________________________________________________
+ 

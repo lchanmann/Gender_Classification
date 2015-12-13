@@ -34,7 +34,7 @@
     fprintf('\nDimension reduction for face dataset.\n\n');
     
     % select dimension reduction space
-    K = 900;
+    K = 90;
     
     % face images projection
     Z = projectData(X_norm, U, K);
