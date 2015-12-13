@@ -1,0 +1,103 @@
+% equation.tex
+% CS 8725 - Supervised Learning (Fall 2015)
+%     University of Missouri-Columbia
+%             Chanmann Lim
+%            December 2015
+
+\documentclass[a4paper]{article}
+
+\usepackage[margin=1 in]{geometry}
+\usepackage{listings}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{multirow}
+\usepackage{hyperref}
+
+\everymath{\displaystyle}
+\DeclareMathOperator*{\argmax}{\arg\!\max}
+\DeclareMathOperator*{\argmin}{\arg\!\min}
+
+\begin{document}
+\title{CS 8725: Equations in Supervised Learning final project}
+\author{Classifiers Comparison for Gender Identification from Facial Images}
+\date{December 03, 2015}
+\maketitle
+
+\begin{center}
+\begin{tabular}{ | l | c | c | } \hline
+  SVM & Training & Test \\ \hline
+  Gaussian RBF & 89.32\% & \textbf{87.37\%} \\
+  Polynomial \textsuperscript{3} & \textbf{89.68\%} & 86.48\% \\
+  Linear & 82.34\% & 81.67\% \\ \hline
+  K-NN \textsuperscript{9} & 82.34\% & 77.76\% \\ \hline
+  Naive Bayes & 77.10\% & 76.16\% \\
+  \hline
+\end{tabular}
+\end{center}
+
+
+\begin{center}
+\begin{tabular}{ | c | c | c | c | c | } \hline
+  Boosting & SVM\textsuperscript{guassian} & SVM\textsuperscript{polynomial} & K-NN & NB \\ \hline
+  1 & 87.37\% & 86.30\% & \textbf{77.76\%} & 76.16\% \\
+  2 & 84.88\% & 87.01\% & 77.76\% & 76.16\% \\
+  3 & 86.48\% & 86.65\% & 77.76\% & 78.11\% \\
+  4 & 84.52\% & \textbf{87.90\%} & 77.76\% & 77.94\% \\
+  5 & 85.94\% & 87.19\% & 77.76\% & 78.29\% \\
+  6 & 85.77\% & 86.65\% & 77.76\% & 78.29\% \\
+  7 & 84.88\% & 86.65\% & 77.76\% & \textbf{79\%} \\
+  8 & 85.94\% & 86.12\% & 77.76\% & 79\% \\
+  9 & 86.30\% & 86.65\% & 77.76\% & 79\% \\
+  10 & 86.65\% & 86.65\% & 77.76\% & 79\% \\
+  11 & 86.48\% & 86.83\% & 77.76\% & 79\% \\
+  12 & 86.30\% & 85.94\% & 77.76\% & 79\% \\
+  13 & 87.01\% & 86.30\% & 77.76\% & 79\% \\
+  14 & 87.01\% & 86.30\% & 77.76\% & 79\% \\
+  15 & 87.19\% & 86.48\% & 77.76\% & 79\% \\
+  16 & \textbf{87.54\%} & 86.48\% & 77.76\% & 79\% \\ \hline
+\end{tabular}
+\end{center}
+
+\begin{equation}
+	G(x_i, x_j) = e^{-|| x_i-x_j ||^2}
+\end{equation}
+
+\begin{equation}
+	G(x_i, x_j) = x_i^Tx_j
+\end{equation}
+
+\begin{equation}
+	G(x_i, x_j) = (1+ x_i^T x_j)^p
+\end{equation}
+
+\begin{align}
+	x_i &\gets \frac{x_i}{\sigma} \quad \forall i \\
+	K(x'^{(i)}, x'^{(j)}) &= e^{-\frac{|| x^{(i)}-x^{(j)} ||^2}{\sigma ^2}}
+\end{align}
+
+\begin{equation}
+	\alpha_t = \frac{1}{2}\ln\left(\frac{1-\epsilon_t}{\epsilon_t}\right)
+\end{equation}
+
+\begin{equation}
+	D_{t+1}(i) = \frac{D_t(i)}{2}\begin{cases}
+			1/(1-\epsilon_t) \quad \text{Correct} \\
+			1/\epsilon_t \quad \quad \quad \;\; \text{Wrong}
+		\end{cases}
+\end{equation}
+
+\begin{equation}
+	\epsilon_t = \sum_{i \in Wrong} D_t(i)
+\end{equation}
+
+\begin{equation}
+	u_{ij} = \frac{\exp(-\beta d(x_i, \theta_j))}{\sum_{k=1}^c \exp(-\beta d(x_i, \theta_k))}
+\end{equation}
+
+\begin{equation}
+	\theta_j = \{x_k \in X-\Theta| \argmin_k \sum_{i=1}^N u_{ij}^q d(x_i, x_k)\}
+\end{equation}
+
+\end{document}
